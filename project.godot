@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Animal Forest"
+run/main_scene="uid://bsh1k2b827ocq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
