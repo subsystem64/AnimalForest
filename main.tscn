@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drtmq565wtvxw" path="res://assets/window_background.png" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://c6skh2ddgn4t7" path="res://ant.gd" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bl6r33wb1otme" path="res://assets/ant/ants_sprite_sheet/9/ant-Sheet.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://umsvekbiqwbb" path="res://assets/ant/Ant2_Idle.png" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(89.82178, 69.86665)
@@ -23,6 +24,22 @@ region = Rect2(192, 0, 96, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("3_h2yge")
 region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(0, 5, 368, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(368, 5, 368, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(736, 5, 368, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(1104, 5, 368, 356)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
 atlas = ExtResource("3_h2yge")
@@ -53,6 +70,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}],
+"loop": true,
+"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -115,28 +149,30 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -225.0
-offset_right = 225.0
-offset_bottom = 300.0
+offset_left = -215.0
+offset_top = 7.0
+offset_right = 215.0
+offset_bottom = 293.6667
 grow_horizontal = 2
 texture = ExtResource("2_lquwl")
 expand_mode = 5
 
 [node name="Ant" type="Area2D" parent="Window" unique_id=1085344428]
 z_index = 3
-position = Vector2(262, 196.00002)
+position = Vector2(262.00003, 234)
 scale = Vector2(2.1041667, 1.875)
 script = ExtResource("3_1bvp3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Ant" unique_id=34190905]
-scale = Vector2(0.9999998, 0.9999999)
+[node name="AntCollisionBox" type="CollisionShape2D" parent="Window/Ant" unique_id=34190905]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="AntSprite" type="AnimatedSprite2D" parent="Window/Ant" unique_id=1467966527]
 z_index = 2
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5vw27")
-animation = &"walk"
+animation = &"idle"
+frame_progress = 0.4002609
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=279094898]
 anchor_mode = 0
