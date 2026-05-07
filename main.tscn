@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c6skh2ddgn4t7" path="res://ant.gd" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bl6r33wb1otme" path="res://assets/ant/ants_sprite_sheet/9/ant-Sheet.png" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://umsvekbiqwbb" path="res://assets/ant/Ant2_Idle.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bqolpxybw1qc1" path="res://assets/pngtree-speech-bubble-pixel-design-vector-png-image_14794594.png" id="6_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(89.82178, 69.86665)
@@ -172,7 +173,13 @@ z_index = 2
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5vw27")
 animation = &"idle"
-frame_progress = 0.4002609
+frame_progress = 0.6212219
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/Ant" unique_id=1630926658]
+visible = false
+position = Vector2(-19.009907, -24.000002)
+scale = Vector2(0.021200996, 0.019033348)
+texture = ExtResource("6_7mycd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=279094898]
 anchor_mode = 0
