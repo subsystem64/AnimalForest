@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drtmq565wtvxw"
-path="res://.godot/imported/window_background.png-63b1f4bd7577c69eeac645d0ed158713.ctex"
+uid="uid://dab6vfp3sgc7p"
+path="res://.godot/imported/Rifle.png-8337a747de076ad425cbb235e7a2243e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment/window_background.png"
-dest_files=["res://.godot/imported/window_background.png-63b1f4bd7577c69eeac645d0ed158713.ctex"]
+source_file="res://assets/TableAssets/Rifle.png"
+dest_files=["res://.godot/imported/Rifle.png-8337a747de076ad425cbb235e7a2243e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drtmq565wtvxw"
-path="res://.godot/imported/window_background.png-63b1f4bd7577c69eeac645d0ed158713.ctex"
+uid="uid://cvcf0566fsir7"
+path="res://.godot/imported/TerritorialWolfRight.png-33c2637ee7e62fe33dc7c6747115026e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment/window_background.png"
-dest_files=["res://.godot/imported/window_background.png-63b1f4bd7577c69eeac645d0ed158713.ctex"]
+source_file="res://assets/TerritorialWolf/TerritorialWolfRight.png"
+dest_files=["res://.godot/imported/TerritorialWolfRight.png-33c2637ee7e62fe33dc7c6747115026e.ctex"]
 
 [params]
 
