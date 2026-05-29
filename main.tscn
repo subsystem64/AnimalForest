@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://de17nsnvr3ef" path="res://assets/TableAssets/firstAidKit.png" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
-[ext_resource type="Script" path="res://wolf.gd" id="9_wolf"]
+[ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
+[ext_resource type="Texture2D" uid="uid://cuxfaolid24a0" path="res://assets/Environment/window border.png" id="12_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Texture2D" uid="uid://yuyweptch3y0" path="res://assets/TerritorialWolf/TerritorialWolfCenter.png" id="16_d13ii"]
 
