@@ -36,6 +36,12 @@ const ITEM_MESSAGES := {
 	"Notepad": "Notepad",
 }
 
+const SPECIAL_ITEM_NAMES := [
+	"Phone",
+	"Animalia",
+	"Notepad",
+]
+
 const ITEM_USE_DESCRIPTIONS := {
 	"Water": "give the wolf water?",
 	"Dart": "tranquilize the wolf?",
@@ -53,6 +59,7 @@ const ITEM_USE_DESCRIPTIONS := {
 const HOVER_LABEL_OFFSET := Vector2(16, 16)
 
 @onready var hover_label: Label = $HoverLabel
+@onready var open_animalia = $"../OpenAnimalia"
 
 var selected_item := ""
 var selected_button: BaseButton
@@ -85,6 +92,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_item_pressed(item_name: String, button: BaseButton) -> void:
+	if item_name == "Animalia":
+		clear_selected_item()
+		open_animalia.open()
+		return
+
 	if selected_button != null:
 		selected_button.modulate = Color.WHITE
 		selected_button.scale = Vector2.ONE
@@ -118,6 +130,8 @@ func has_selected_item() -> bool:
 func get_selected_item_use_description() -> String:
 	return ITEM_USE_DESCRIPTIONS.get(selected_item, "use this item?")
 
+func selected_item_triggers_warning() -> bool:
+	return selected_item != "" and not selected_item in SPECIAL_ITEM_NAMES
 
 func clear_selected_item() -> void:
 	if selected_button != null:

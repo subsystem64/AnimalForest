@@ -39,7 +39,7 @@ func _ready() -> void:
 
 
 func _on_wolf_pressed() -> void:
-	if item_selection.has_selected_item():
+	if item_selection.selected_item_triggers_warning():
 		warning_label.text = "Do you want to %s" % item_selection.get_selected_item_use_description()
 		warning.visible = true
 		return

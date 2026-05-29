@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
+[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Texture2D" uid="uid://cuxfaolid24a0" path="res://assets/Environment/window border.png" id="12_dg77c"]
 [ext_resource type="Texture2D" uid="uid://yuyweptch3y0" path="res://assets/TerritorialWolf/TerritorialWolfCenter.png" id="16_d13ii"]
@@ -477,3 +478,106 @@ grow_vertical = 0
 texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="OpenAnimalia" type="Control" parent="." unique_id=898833669]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.0
+offset_top = -279.0
+offset_right = -44.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_animalia")
+metadata/_edit_lock_ = true
+
+[node name="AnimaliaText" type="RichTextLabel" parent="OpenAnimalia" unique_id=1794980687]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.125
+offset_top = -75.25
+offset_right = 123.125
+offset_bottom = 75.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "This is the animalia"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="OpenAnimalia" unique_id=398070621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.5058824, 1)
+metadata/_edit_lock_ = true
+
+[node name="FlipNext" type="TextureButton" parent="OpenAnimalia" unique_id=2008015980]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("19_cegan")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FlipPrevious" type="TextureButton" parent="OpenAnimalia" unique_id=1097667130]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+texture_normal = ExtResource("19_cegan")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Close" type="TextureButton" parent="OpenAnimalia" unique_id=1391992266]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("19_cegan")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PageCounter" type="RichTextLabel" parent="OpenAnimalia" unique_id=681702168]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 161.0
+offset_right = 121.25
+offset_bottom = 311.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "1/5
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
