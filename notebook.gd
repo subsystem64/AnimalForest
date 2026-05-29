@@ -2,14 +2,14 @@ extends Control
 
 const PAGE_COUNT := 5
 const PAGE_TEXT := [
-	"This is the animalia",
-	"this is the second page of the animalia",
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	"Alalal",
-	"Wolf is not dog",
+	"I was born at a very young age.",
+	"Neither my mother or my father were present for my birth.",
+	"I was raised by a tree",
+	"I am wooden.",
+	"You're stumped.",
 ]
 
-@onready var animalia_text: RichTextLabel = $AnimaliaText
+@onready var notebook_text: RichTextLabel = $NotebookText
 @onready var next_button: BaseButton = $FlipNext
 @onready var previous_button: BaseButton = $FlipPrevious
 @onready var close_button: BaseButton = $Close
@@ -54,4 +54,4 @@ func _on_close_pressed() -> void:
 
 func _update_page_counter() -> void:
 	page_counter.text = "%d/%d" % [page, PAGE_COUNT]
-	animalia_text.text = PAGE_TEXT[page - 1]
+	notebook_text.text = PAGE_TEXT[page - 1]

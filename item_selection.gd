@@ -60,6 +60,7 @@ const HOVER_LABEL_OFFSET := Vector2(16, 16)
 
 @onready var hover_label: Label = $HoverLabel
 @onready var open_animalia = $"../OpenAnimalia"
+@onready var open_notebook = $"../OpenNotebook"
 
 var selected_item := ""
 var selected_button: BaseButton
@@ -95,6 +96,11 @@ func _on_item_pressed(item_name: String, button: BaseButton) -> void:
 	if item_name == "Animalia":
 		clear_selected_item()
 		open_animalia.open()
+		return
+
+	if item_name == "Notepad":
+		clear_selected_item()
+		open_notebook.open()
 		return
 
 	if selected_button != null:
