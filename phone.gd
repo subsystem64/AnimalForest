@@ -28,7 +28,7 @@ func _ready() -> void:
 	dialogue_box.visible = false
 
 	# TESTING ONLY. Remove later when story events trigger the call.
-	start_ringing()
+	# 	start_ringing()
 
 func _process(delta: float) -> void:
 	if is_ringing:
