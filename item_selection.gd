@@ -62,9 +62,13 @@ func _on_item_pressed(item_name: String, button: BaseButton) -> void:
 		selected_button.modulate = Color.WHITE
 		selected_button.scale = Vector2.ONE
 
-	selected_item = item_name
-	selected_button = button
-	selected_button.modulate = Color(1.0, 0.92, 0.45)
+	if selected_item == item_name:
+		selected_item = ""
+		selected_button = null
+	else:
+		selected_item = item_name
+		selected_button = button
+		selected_button.modulate = Color(1.0, 0.92, 0.45)
 
 	var tween := create_tween()
 	tween.tween_property(button, "scale", Vector2(1.08, 1.08), 0.08)

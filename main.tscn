@@ -311,3 +311,72 @@ offset_top = 18.0
 offset_right = 151.0
 offset_bottom = 41.0
 text = "Item"
+
+[node name="Warning" type="Control" parent="." unique_id=1535746166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WarningLabel" type="RichTextLabel" parent="Warning" unique_id=674244824]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.125
+offset_top = -75.25
+offset_right = 123.125
+offset_bottom = 75.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Do you ant to use this item"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Warning" unique_id=1074706611]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.5
+offset_top = -95.0
+offset_right = 138.5
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.5058824, 1)
+
+[node name="YesButton" type="TextureButton" parent="Warning" unique_id=1888840494]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="NoButton" type="TextureButton" parent="Warning" unique_id=1483988345]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
