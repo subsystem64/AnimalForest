@@ -94,11 +94,13 @@ func _process(_delta: float) -> void:
 
 func _on_item_pressed(item_name: String, button: BaseButton) -> void:
 	if item_name == "Animalia":
+		tween_item(button)
 		clear_selected_item()
 		open_animalia.open()
 		return
 
 	if item_name == "Notepad":
+		tween_item(button)
 		clear_selected_item()
 		open_notebook.open()
 		return
@@ -115,9 +117,7 @@ func _on_item_pressed(item_name: String, button: BaseButton) -> void:
 		selected_button = button
 		selected_button.modulate = Color(1.0, 0.92, 0.45)
 
-	var tween := create_tween()
-	tween.tween_property(button, "scale", Vector2(1.08, 1.08), 0.08)
-	tween.tween_property(button, "scale", Vector2.ONE, 0.08)
+	tween_item(button)
 
 
 func _show_item_name(item_name: String) -> void:
@@ -132,6 +132,10 @@ func _hide_item_name() -> void:
 func has_selected_item() -> bool:
 	return selected_item != ""
 
+func tween_item(button: BaseButton) -> void:
+	var tween := create_tween()
+	tween.tween_property(button, "scale", Vector2(1.08, 1.08), 0.08)
+	tween.tween_property(button, "scale", Vector2.ONE, 0.08)
 
 func get_selected_item_use_description() -> String:
 	return ITEM_USE_DESCRIPTIONS.get(selected_item, "use this item?")
