@@ -1,6 +1,6 @@
 extends TextureRect
 
-const MAGNIFYING_GLASS_OFFSET := Vector2(-13, -13)
+const MAGNIFYING_GLASS_OFFSET := Vector2(-30, -30)
 
 @onready var magnifying_glass: TextureRect = $"../MagnifyingGlass"
 @onready var notebook = $"../../../OpenNotebook"

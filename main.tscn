@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsh1k2b827ocq"]
 
-[ext_resource type="Script" uid="uid://cu31p45t4el0y" path="res://item_selection.gd" id="1_272bh"]
+[ext_resource type="Script" path="res://item_selection.gd" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://pfd1xq8bklaj" path="res://assets/Environment/cabin_no_border.png" id="2_272bh"]
 [ext_resource type="Texture2D" uid="uid://d0w6iv780eaom" path="res://assets/TableAssets/waterBowl.png" id="3_272bh"]
 [ext_resource type="Texture2D" uid="uid://bgjlsluikda6t" path="res://assets/TableAssets/tranquilizer.png" id="4_272bh"]
@@ -13,12 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://de17nsnvr3ef" path="res://assets/TableAssets/firstAidKit.png" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
-[ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" path="res://wolf.gd" id="9_wolf"]
+[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
-[ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
-[ext_resource type="Script" uid="uid://dp4xclick15pd" path="res://phone.gd" id="12_82xsv"]
+[ext_resource type="Script" path="res://notebook.gd" id="11_notebook"]
+[ext_resource type="Script" path="res://phone.gd" id="12_82xsv"]
 [ext_resource type="Texture2D" uid="uid://bsv1nbp3l032n" path="res://assets/TableAssets/phone_ringlines.png" id="13_ryguw"]
 [ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
 [ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
@@ -304,7 +304,6 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="WolfCloseup" type="Control" parent="Control" unique_id=1644426695]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -316,6 +315,7 @@ offset_right = -1.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="Control/WolfCloseup" unique_id=616936756]
 z_index = 3
@@ -342,6 +342,7 @@ texture = ExtResource("22_qsp4k")
 expand_mode = 1
 
 [node name="WolfTerritorial" type="TextureRect" parent="Control/WolfCloseup" unique_id=352048285]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -386,7 +387,6 @@ position = Vector2(401, 258)
 polygon = PackedVector2Array(-111, -141, -42, -135, 28, -88, 67.26294, -6.644287, 168, 137, 91, 154, 17, 43, -22, 153, -60, 159, -40, 72, -84, 72, -82, 164, -205, 182, -127, 23)
 
 [node name="WolfHungry" type="TextureRect" parent="Control/WolfCloseup" unique_id=400246889]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -403,6 +403,31 @@ texture = ExtResource("18_1u8w0")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_lock_ = true
+
+[node name="Tail" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=322342302]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Tail" unique_id=1604040344]
+position = Vector2(502, 88.99999)
+polygon = PackedVector2Array(-54, -4, 13, 97, 25, 185, -22, 197, -46, 143, -74, 101)
+
+[node name="Head" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=55347387]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Head" unique_id=1630976833]
+position = Vector2(245, 52)
+scale = Vector2(2.0181446, 1)
+polygon = PackedVector2Array(-96.127884, 22, -42.117874, -21, -14.865112, -26, -16.351654, 83, -26.261734, 89, -95.13689, 86)
+
+[node name="Eyes" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=342785007]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Eyes" unique_id=1449903008]
+position = Vector2(196, 150)
+polygon = PackedVector2Array(-118, -2, -38, 0, -32, 29, -119, 30)
+
+[node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=1040486996]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Back" unique_id=1122371194]
+position = Vector2(354, 169)
+polygon = PackedVector2Array(-111, -141, -20, -128, 65, -95, 37, -16, -133, 20)
 
 [node name="WolfWounded" type="TextureRect" parent="Control/WolfCloseup" unique_id=1395285462]
 visible = false
