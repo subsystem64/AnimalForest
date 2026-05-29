@@ -43,7 +43,7 @@ const ITEM_USE_DESCRIPTIONS := {
 	"Mug": "not do anything?",
 	"Bedroll": "build a shelter for the wolf?",
 	"Rifle": "shoot the rifle and scare the wolf?",
-	"FirstAidKit": "use the first aid kit on the wolf?",
+	"FirstAidKit": "heal the wolf?",
 	"WoodenPost": "use the wooden post near the wolf?",
 	"Phone": "use the phone?",
 	"Animalia": "check Animalia?",
