@@ -6,6 +6,13 @@ const ITEM_PATHS := {
 	"Phone": "Desk/Phone",
 	"Animalia": "Desk/Animalia",
 	"Notepad": "Desk/Notepad",
+	"Food": "Shelf/FoodBowl",
+	"Mug": "Shelf/Mug",
+	"Bedroll": "Shelf/BedRoll",
+	"Rifle": "Shelf/Rifle",
+	"FirstAidKit": "Shelf/FirstAidKit",
+	"WoodenPost": "Shelf/WoodenPost",
+
 }
 
 const PASS_THROUGH_PATHS := [
@@ -18,9 +25,29 @@ const PASS_THROUGH_PATHS := [
 const ITEM_MESSAGES := {
 	"Water": "Water",
 	"Dart": "Tranquilizer",
+	"Food": "Food",
+	"Mug": "Mug",
+	"Bedroll": "Bedroll",
+	"Rifle": "Rifle",
+	"FirstAidKit": "First Aid Kit",
+	"WoodenPost": "Wooden Post",
 	"Phone": "Phone",
 	"Animalia": "Animalia",
 	"Notepad": "Notepad",
+}
+
+const ITEM_USE_DESCRIPTIONS := {
+	"Water": "give the wolf water?",
+	"Dart": "tranquilize the wolf?",
+	"Food": "give the wolf food?",
+	"Mug": "not do anything?",
+	"Bedroll": "build a shelter for the wolf?",
+	"Rifle": "shoot the rifle and scare the wolf?",
+	"FirstAidKit": "use the first aid kit on the wolf?",
+	"WoodenPost": "use the wooden post near the wolf?",
+	"Phone": "use the phone?",
+	"Animalia": "check Animalia?",
+	"Notepad": "use the notepad?",
 }
 
 const HOVER_LABEL_OFFSET := Vector2(16, 16)
@@ -82,3 +109,20 @@ func _show_item_name(item_name: String) -> void:
 
 func _hide_item_name() -> void:
 	hover_label.visible = false
+
+
+func has_selected_item() -> bool:
+	return selected_item != ""
+
+
+func get_selected_item_use_description() -> String:
+	return ITEM_USE_DESCRIPTIONS.get(selected_item, "use this item?")
+
+
+func clear_selected_item() -> void:
+	if selected_button != null:
+		selected_button.modulate = Color.WHITE
+		selected_button.scale = Vector2.ONE
+
+	selected_item = ""
+	selected_button = null

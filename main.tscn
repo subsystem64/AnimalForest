@@ -15,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Texture2D" uid="uid://cuxfaolid24a0" path="res://assets/Environment/window border.png" id="12_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cuxfaolid24a0" path="res://assets/Environment/window border.png" id="12_dg77c"]
 [ext_resource type="Texture2D" uid="uid://yuyweptch3y0" path="res://assets/TerritorialWolf/TerritorialWolfCenter.png" id="16_d13ii"]
+[ext_resource type="Texture2D" uid="uid://cjy14k8q5rk1q" path="res://icon.svg" id="19_cegan"]
 
 [node name="Main" type="Control" unique_id=642000892]
 z_index = -4
@@ -397,16 +398,17 @@ offset_bottom = 41.0
 text = "Item"
 
 [node name="Warning" type="Control" parent="." unique_id=1535746166]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -129.0
+offset_top = -78.0
+offset_right = 129.0
+offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -455,6 +457,9 @@ offset_left = -40.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
+texture_normal = ExtResource("19_cegan")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="NoButton" type="TextureButton" parent="Warning" unique_id=1483988345]
 layout_mode = 1
@@ -464,3 +469,6 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
+texture_normal = ExtResource("19_cegan")
+ignore_texture_size = true
+stretch_mode = 0
