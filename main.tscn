@@ -17,6 +17,12 @@
 [ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
+[ext_resource type="Script" uid="uid://dp4xclick15pd" path="res://phone.gd" id="12_82xsv"]
+[ext_resource type="Texture2D" uid="uid://cuxfaolid24a0" path="res://assets/Environment/window border.png" id="12_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bsv1nbp3l032n" path="res://assets/TableAssets/phone_ringlines.png" id="13_ryguw"]
+[ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
+[ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
+[ext_resource type="AudioStream" uid="uid://b1p5b18i5psw2" path="res://assets/Sound/PhoneSlam.mp3" id="16_0odxb"]
 [ext_resource type="Texture2D" uid="uid://yuyweptch3y0" path="res://assets/TerritorialWolf/TerritorialWolfCenter.png" id="16_d13ii"]
 [ext_resource type="Texture2D" uid="uid://5qw1k15lgybn" path="res://assets/TerritorialWolf/TerritorialWolfLeft.png" id="17_d13ii"]
 [ext_resource type="Texture2D" uid="uid://5me7yc83irma" path="res://assets/HungryWolf/HungryWolf.png" id="18_1u8w0"]
@@ -82,6 +88,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_272bh")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="Dart" type="TextureButton" parent="Control/Shelf" unique_id=1973583454]
 layout_mode = 0
@@ -95,6 +102,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_272bh")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="FoodBowl" type="TextureButton" parent="Control/Shelf" unique_id=106724948]
 z_index = 1
@@ -107,6 +115,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_yaehf")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="Mug" type="TextureButton" parent="Control/Shelf" unique_id=2142680714]
 layout_mode = 0
@@ -120,6 +129,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_074og")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="BedRoll" type="TextureButton" parent="Control/Shelf" unique_id=1837892413]
 z_index = 1
@@ -132,6 +142,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_cegan")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="FirstAidKit" type="TextureButton" parent="Control/Shelf" unique_id=916988883]
 z_index = 1
@@ -157,6 +168,7 @@ texture_normal = ExtResource("9_getpj")
 ignore_texture_size = true
 stretch_mode = 4
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Rifle" type="TextureButton" parent="Control/Shelf" unique_id=1017081310]
 z_index = 1
@@ -170,6 +182,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_ryguw")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="Desk" type="Control" parent="Control" unique_id=1359355335]
 layout_mode = 1
@@ -193,7 +206,28 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_5vw27")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("12_82xsv")
 metadata/_edit_lock_ = true
+
+[node name="RingLines" type="TextureRect" parent="Control/Desk/Phone" unique_id=1510551394]
+visible = false
+layout_mode = 0
+offset_left = -38.0
+offset_top = -116.0
+offset_right = 218.0
+offset_bottom = 140.0
+mouse_filter = 2
+texture = ExtResource("13_ryguw")
+expand_mode = 1
+
+[node name="RingSound" type="AudioStreamPlayer" parent="Control/Desk/Phone" unique_id=2134495563]
+stream = ExtResource("14_d13ii")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="Control/Desk/Phone" unique_id=207711561]
+stream = ExtResource("15_1u8w0")
+
+[node name="SlamSound" type="AudioStreamPlayer" parent="Control/Desk/Phone" unique_id=884355536]
+stream = ExtResource("16_0odxb")
 
 [node name="Animalia" type="TextureButton" parent="Control/Desk" unique_id=1111576349]
 layout_mode = 0
@@ -266,6 +300,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 flat = true
+metadata/_edit_lock_ = true
 
 [node name="WolfCloseup" type="Control" parent="Control" unique_id=1644426695]
 visible = false
@@ -408,6 +443,27 @@ offset_top = 18.0
 offset_right = 151.0
 offset_bottom = 41.0
 text = "Item"
+
+[node name="PhoneDialogue" type="Panel" parent="Control" unique_id=1667747568]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 336.0
+offset_top = 496.0
+offset_right = 892.0
+offset_bottom = 615.0
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Control/PhoneDialogue" unique_id=1814239851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Warning" type="Control" parent="." unique_id=1535746166]
 visible = false
