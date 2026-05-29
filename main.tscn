@@ -6,12 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://bgjlsluikda6t" path="res://assets/TableAssets/tranquilizer.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://c413qjlly3cah" path="res://assets/TableAssets/phone.png" id="5_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bvq0dsu7emt7k" path="res://assets/dusk_no_wolf.jpeg" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bxrncgtuu4hjl" path="res://assets/TableAssets/foodBowl.png" id="5_yaehf"]
 [ext_resource type="Texture2D" uid="uid://qr8dkydj4167" path="res://assets/wolf_small.png" id="6_7mycd"]
-[ext_resource type="Texture2D" uid="uid://cj1bihveso88u" path="res://assets/WoundedWolf/Wounded_Wolf_realistic.png" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://1twg1ugwpgn4" path="res://assets/TableAssets/mug.png" id="6_074og"]
+[ext_resource type="Texture2D" uid="uid://fkr2lqiqtle7" path="res://assets/TableAssets/CampingBedroll.png" id="7_cegan"]
 [ext_resource type="Texture2D" uid="uid://uhw7xilmkete" path="res://assets/TableAssets/animalia.png" id="7_efxa6"]
+[ext_resource type="Texture2D" uid="uid://de17nsnvr3ef" path="res://assets/TableAssets/firstAidKit.png" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
-[ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Texture2D" uid="uid://cuxfaolid24a0" path="res://assets/Environment/window border.png" id="12_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
+[ext_resource type="Script" path="res://wolf.gd" id="9_wolf"]
+[ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
+[ext_resource type="Texture2D" uid="uid://yuyweptch3y0" path="res://assets/TerritorialWolf/TerritorialWolfCenter.png" id="16_d13ii"]
 
 [node name="Main" type="Control" unique_id=642000892]
 z_index = -4
@@ -57,14 +62,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+metadata/_edit_lock_ = true
 
 [node name="Water" type="TextureButton" parent="Control/Shelf" unique_id=686745095]
 z_index = 1
 layout_mode = 0
-offset_left = 35.0
-offset_top = 521.0
-offset_right = 220.0
-offset_bottom = 704.0
+offset_left = 66.0
+offset_top = 561.0
+offset_right = 207.49493
+offset_bottom = 697.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_272bh")
 ignore_texture_size = true
@@ -82,6 +88,80 @@ texture_normal = ExtResource("4_272bh")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="FoodBowl" type="TextureButton" parent="Control/Shelf" unique_id=106724948]
+z_index = 1
+layout_mode = 0
+offset_left = 149.0
+offset_top = 560.0
+offset_right = 334.13513
+offset_bottom = 697.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_yaehf")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Mug" type="TextureButton" parent="Control/Shelf" unique_id=2142680714]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 162.0
+offset_right = 990.0
+offset_bottom = 266.04224
+tooltip_text = "
+"
+texture_normal = ExtResource("6_074og")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BedRoll" type="TextureButton" parent="Control/Shelf" unique_id=1837892413]
+z_index = 1
+layout_mode = 0
+offset_left = 90.0
+offset_top = 194.0
+offset_right = 284.5946
+offset_bottom = 338.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_cegan")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="FirstAidKit" type="TextureButton" parent="Control/Shelf" unique_id=916988883]
+z_index = 1
+layout_mode = 0
+offset_left = 160.0
+offset_top = 73.0
+offset_right = 310.0
+offset_bottom = 184.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_82xsv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="WoodenPost" type="TextureButton" parent="Control/Shelf" unique_id=2031077379]
+z_index = 1
+layout_mode = 0
+offset_left = 876.0
+offset_top = 88.0
+offset_right = 1061.1351
+offset_bottom = 225.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_getpj")
+ignore_texture_size = true
+stretch_mode = 4
+flip_h = true
+
+[node name="Rifle" type="TextureButton" parent="Control/Shelf" unique_id=1017081310]
+z_index = 1
+layout_mode = 0
+offset_left = 940.0002
+offset_top = 730.00006
+offset_right = 1398.735
+offset_bottom = 1069.4639
+rotation = -1.3788102
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_ryguw")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="Desk" type="Control" parent="Control" unique_id=1359355335]
 layout_mode = 1
 anchors_preset = 15
@@ -95,37 +175,39 @@ metadata/_edit_lock_ = true
 
 [node name="Phone" type="TextureButton" parent="Control/Desk" unique_id=1294120491]
 layout_mode = 0
-offset_left = 353.0
-offset_top = 345.0
-offset_right = 535.0
-offset_bottom = 522.0
+offset_left = 324.0
+offset_top = 320.0
+offset_right = 506.0
+offset_bottom = 497.0
 pivot_offset = Vector2(91, 85)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_5vw27")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="Animalia" type="TextureButton" parent="Control/Desk" unique_id=1111576349]
 layout_mode = 0
-offset_left = 728.0
-offset_top = 403.0
-offset_right = 910.0
-offset_bottom = 580.0
+offset_left = 476.0
+offset_top = 395.0
+offset_right = 658.0
+offset_bottom = 572.0
 pivot_offset = Vector2(91, 85)
 texture_normal = ExtResource("7_efxa6")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="Notepad" type="TextureButton" parent="Control/Desk" unique_id=1845454628]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 397.0
-offset_right = 703.0
-offset_bottom = 573.0
-pivot_offset = Vector2(91, 85)
+offset_left = 647.0
+offset_top = 421.0
+offset_right = 793.84094
+offset_bottom = 563.0
 texture_normal = ExtResource("8_dg77c")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="Outside" type="Control" parent="Control" unique_id=593350650]
 z_index = -2
@@ -152,16 +234,17 @@ metadata/_edit_lock_ = true
 
 [node name="Wolf" type="Control" parent="Control/Outside" unique_id=1963855325]
 anchors_preset = 0
-offset_left = 593.0
-offset_top = 177.0
-offset_right = 754.0
-offset_bottom = 304.0
+offset_left = 523.0
+offset_top = 232.0
+offset_right = 684.0
+offset_bottom = 359.0
 script = ExtResource("9_wolf")
 
 [node name="WolfSprite" type="Sprite2D" parent="Control/Outside/Wolf" unique_id=561048107]
-position = Vector2(83, 71)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("7_5vw27")
+z_index = -1
+position = Vector2(96.999985, 26.000006)
+scale = Vector2(0.21972658, 0.21972658)
+texture = ExtResource("16_d13ii")
 
 [node name="WolfButton" type="Button" parent="Control/Outside/Wolf" unique_id=966970678]
 layout_mode = 1
