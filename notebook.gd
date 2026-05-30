@@ -58,12 +58,14 @@ func _update_page_counter() -> void:
 	notebook_text.text = page_text[page - 1]
 
 
-func add_inspection_note(note_name: String) -> void:
-	if note_name in inspection_notes:
+func add_inspection_note(note_name: String, note_page: int = 1) -> void:
+	var clamped_page := clampi(note_page, 1, PAGE_COUNT)
+	var note_key := "%d:%s" % [clamped_page, note_name]
+	if note_key in inspection_notes:
 		return
 
-	inspection_notes.append(note_name)
-	page_text[0] += "\n%s" % note_name
+	inspection_notes.append(note_key)
+	page_text[clamped_page - 1] += "\n%s" % note_name
 
-	if page == 1:
+	if page == clamped_page:
 		_update_page_counter()

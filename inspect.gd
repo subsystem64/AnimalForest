@@ -1,9 +1,15 @@
-extends TextureRect
+extends Control
 
 const MAGNIFYING_GLASS_OFFSET := Vector2(-30, -30)
+const WOLF_STATE_NOTE_PAGES := {
+	"WolfTerritorial": 1,
+	"WolfHungry": 2,
+	"WolfWounded": 3,
+}
 
-@onready var magnifying_glass: TextureRect = $"../MagnifyingGlass"
-@onready var notebook = $"../../../OpenNotebook"
+@onready var magnifying_glass: TextureRect = $MagnifyingGlass
+@onready var scribble_sound: AudioStreamPlayer = $ScribbleSound
+@onready var notebook = $"../../OpenNotebook"
 
 var inspection_polygons: Array[CollisionPolygon2D] = []
 var hovered_polygon: CollisionPolygon2D
@@ -53,6 +59,9 @@ func _get_hovered_inspection_polygon() -> CollisionPolygon2D:
 	var mouse_position := get_global_mouse_position()
 
 	for collision_polygon: CollisionPolygon2D in inspection_polygons:
+		if not collision_polygon.is_visible_in_tree():
+			continue
+
 		var local_mouse_position := collision_polygon.get_global_transform().affine_inverse() * mouse_position
 		if Geometry2D.is_point_in_polygon(local_mouse_position, collision_polygon.polygon):
 			return collision_polygon
@@ -61,7 +70,11 @@ func _get_hovered_inspection_polygon() -> CollisionPolygon2D:
 
 
 func _collect_hovered_inspection() -> void:
-	var note_name := hovered_polygon.get_parent().name
+	var note_area := hovered_polygon.get_parent()
+	var wolf_state := note_area.get_parent()
+	var note_name := note_area.name
+	var note_page: int = WOLF_STATE_NOTE_PAGES[wolf_state.name] as int
 	inspection_polygons.erase(hovered_polygon)
-	notebook.add_inspection_note(note_name)
+	scribble_sound.play()
+	notebook.add_inspection_note(note_name, note_page)
 	hide_magnifying_glass()

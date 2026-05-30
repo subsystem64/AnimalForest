@@ -59,7 +59,7 @@ func _on_wolf_pressed() -> void:
 
 
 func _on_closeup_border_pressed() -> void:
-	# _increment_level()
+	_increment_level()
 	wolf_closeup.visible = false
 
 
