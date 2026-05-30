@@ -4,9 +4,8 @@ const ITEM_CUTSCENES := {
 	"Water": "WaterAction",
 	"Food": "FoodAction",
 }
-const BLACK_SCREEN_SECONDS := 1.0
 
-@onready var black_rect: ColorRect = $BlackRect
+@onready var blink_holder: Control = $CanvasLayer/BlinkHolder
 @onready var wolf: Control = $"../Control/Outside/Wolf"
 
 var can_close_after_release := false
@@ -15,8 +14,7 @@ var is_closing := false
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	black_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	black_rect.z_index = 100
+	blink_holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	visible = false
 	_hide_cutscenes()
 
@@ -54,9 +52,8 @@ func show_for_item(item_name: String) -> void:
 func _close_to_main_scene() -> void:
 	is_closing = true
 	can_close_after_release = false
-	black_rect.visible = true
 
-	await get_tree().create_timer(BLACK_SCREEN_SECONDS).timeout
+	await blink_holder.call("play_transition")
 
 	if wolf.has_method("advance_level"):
 		wolf.call("advance_level")

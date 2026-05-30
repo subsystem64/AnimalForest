@@ -34,6 +34,57 @@
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
 [ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
+[ext_resource type="Script" uid="uid://7a4hqadi5eir" path="res://blink.gd" id="35_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://cxwwygprxsnwo" path="res://assets/BlinkAnimation/blink1.png" id="35_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://dpv465wwm4u5b" path="res://assets/BlinkAnimation/blink2.png" id="36_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://diacwcrrx52tt" path="res://assets/BlinkAnimation/blink3.png" id="37_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://cu1gwfpurx6jo" path="res://assets/BlinkAnimation/blink4.png" id="38_d2t1y"]
+[ext_resource type="Texture2D" uid="uid://374xji87hiv7" path="res://assets/BlinkAnimation/blink5.png" id="39_gngh3"]
+[ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4k2k6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_h8e4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4lmeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0cp0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_d2t1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gngh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0n3wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0n3wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gngh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_d2t1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0cp0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4lmeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_h8e4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Control" unique_id=642000892]
 z_index = -4
@@ -912,3 +963,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ActionCutscene" unique_id=1621524572]
+
+[node name="BlinkHolder" type="Control" parent="ActionCutscene/CanvasLayer" unique_id=2073164015]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("35_4lmeg")
+
+[node name="BlinkAnimation" type="AnimatedSprite2D" parent="ActionCutscene/CanvasLayer/BlinkHolder" unique_id=246777495]
+sprite_frames = SubResource("SpriteFrames_4k2k6")
+centered = false
