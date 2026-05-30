@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6t56ynowhfkb"
-path="res://.godot/imported/dusk_with_wolf.jpeg-2dc72987912ed04ea373cbd91ea9f2b2.ctex"
+uid="uid://36om66bxepxy"
+path="res://.godot/imported/TerritorialWolfThemed.png-ceb364f7f4b2da0dc4424832d2f6d621.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dusk_with_wolf.jpeg"
-dest_files=["res://.godot/imported/dusk_with_wolf.jpeg-2dc72987912ed04ea373cbd91ea9f2b2.ctex"]
+source_file="res://assets/TerritorialWolf/TerritorialWolfThemed.png"
+dest_files=["res://.godot/imported/TerritorialWolfThemed.png-ceb364f7f4b2da0dc4424832d2f6d621.ctex"]
 
 [params]
 
