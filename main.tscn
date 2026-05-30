@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
 [ext_resource type="Script" uid="uid://dp4xclick15pd" path="res://phone.gd" id="12_82xsv"]
+[ext_resource type="Script" uid="uid://cr1h8ov0ay3s4" path="res://cutscene.gd" id="13_cutscene"]
 [ext_resource type="Texture2D" uid="uid://bsv1nbp3l032n" path="res://assets/TableAssets/phone_ringlines.png" id="13_ryguw"]
 [ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
 [ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
@@ -31,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://cjy14k8q5rk1q" path="res://icon.svg" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
+[ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
+[ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
 
 [node name="Main" type="Control" unique_id=642000892]
 z_index = -4
@@ -157,6 +160,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_82xsv")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="WoodenPost" type="TextureButton" parent="Control/Shelf" unique_id=2031077379]
 z_index = 1
@@ -311,10 +315,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 8.0
-offset_right = -1.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_inspect")
@@ -546,6 +546,7 @@ metadata/_edit_lock_ = true
 stream = ExtResource("28_seu75")
 
 [node name="HoverLabel" type="Label" parent="Control" unique_id=176369045]
+visible = false
 z_index = 99
 layout_mode = 0
 offset_left = 111.0
@@ -862,3 +863,52 @@ text = "1/5
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="ActionCutscene" type="Control" parent="." unique_id=1975638807]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_cutscene")
+
+[node name="WaterAction" type="TextureRect" parent="ActionCutscene" unique_id=1942635929]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("32_htxhm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FoodAction" type="TextureRect" parent="ActionCutscene" unique_id=875840346]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("33_jq2sk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BlackRect" type="ColorRect" parent="ActionCutscene" unique_id=737753746]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

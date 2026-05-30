@@ -24,6 +24,7 @@ const WOLF_WOUNDED_NAME := "WolfWounded"
 @onready var warning_label: RichTextLabel = $"../../../Warning/WarningLabel"
 @onready var yes_button: BaseButton = $"../../../Warning/YesButton"
 @onready var no_button: BaseButton = $"../../../Warning/NoButton"
+@onready var action_cutscene: Control = $"../../../ActionCutscene"
 
 
 func _ready() -> void:
@@ -59,13 +60,17 @@ func _on_wolf_pressed() -> void:
 
 
 func _on_closeup_border_pressed() -> void:
-	_increment_level()
 	wolf_closeup.visible = false
 
 
 func _on_warning_yes_pressed() -> void:
+	var selected_item: String = item_selection.selected_item
 	warning.visible = false
-	wolf_closeup.visible = true
+	if action_cutscene.has_method("show_for_item"):
+		action_cutscene.call("show_for_item", selected_item)
+	else:
+		push_warning("ActionCutscene is missing cutscene.gd")
+	item_selection.clear_selected_item()
 
 
 func _on_warning_no_pressed() -> void:
@@ -99,5 +104,5 @@ func _find_closeup_image(node_name: String) -> TextureRect:
 	return wolf_closeup.find_child(node_name, true, false) as TextureRect
 
 
-func _increment_level() -> void:
+func advance_level() -> void:
 	level = (level + 1) % 3
