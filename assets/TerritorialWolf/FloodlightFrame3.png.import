@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8wbxy4sops6d"
-path="res://.godot/imported/TerritorialWolfTheemed.png-e8c156501d6c0de57b43ead8410ff507.ctex"
+uid="uid://dvngw7to0hjgl"
+path="res://.godot/imported/FloodlightFrame3.png-2b57c08c3a154ea780ee0a419171adc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TerritorialWolf/TerritorialWolfTheemed.png"
-dest_files=["res://.godot/imported/TerritorialWolfTheemed.png-e8c156501d6c0de57b43ead8410ff507.ctex"]
+source_file="res://assets/TerritorialWolf/FloodlightFrame3.png"
+dest_files=["res://.godot/imported/FloodlightFrame3.png-2b57c08c3a154ea780ee0a419171adc7.ctex"]
 
 [params]
 

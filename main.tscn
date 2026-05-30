@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bsh1k2b827ocq"]
 
+[ext_resource type="Script" uid="uid://cwxlsmuv5tr84" path="res://main.gd" id="1_4k2k6"]
 [ext_resource type="Script" uid="uid://cu31p45t4el0y" path="res://item_selection.gd" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://pfd1xq8bklaj" path="res://assets/Environment/cabin_no_border.png" id="2_272bh"]
 [ext_resource type="Texture2D" uid="uid://d0w6iv780eaom" path="res://assets/TableAssets/waterBowl.png" id="3_272bh"]
@@ -14,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -24,12 +25,12 @@
 [ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
 [ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://b1p5b18i5psw2" path="res://assets/Sound/PhoneSlam.mp3" id="16_0odxb"]
-[ext_resource type="Texture2D" uid="uid://yuyweptch3y0" path="res://assets/TerritorialWolf/TerritorialWolfCenter.png" id="16_d13ii"]
 [ext_resource type="Texture2D" uid="uid://5qw1k15lgybn" path="res://assets/TerritorialWolf/TerritorialWolfLeft.png" id="17_d13ii"]
 [ext_resource type="Texture2D" uid="uid://5me7yc83irma" path="res://assets/HungryWolf/HungryWolf.png" id="18_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dtvyn7sot0dx3" path="res://assets/Environment/Zoom_Border.png" id="18_getpj"]
 [ext_resource type="Texture2D" uid="uid://by6p1oyow84o4" path="res://assets/WoundedWolf/WoundedWolf.png" id="19_0odxb"]
 [ext_resource type="Texture2D" uid="uid://cjy14k8q5rk1q" path="res://icon.svg" id="19_cegan"]
+[ext_resource type="Texture2D" uid="uid://52jcs2wsp117" path="res://assets/TerritorialWolf/TerritorialWolf.png" id="20_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
@@ -85,6 +86,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+[ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
+[ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
+[ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
 
 [node name="Main" type="Control" unique_id=642000892]
 z_index = -4
@@ -95,6 +99,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_4k2k6")
 metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="." unique_id=1843364932]
@@ -321,18 +326,17 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="OutsideDusk" type="TextureRect" parent="Control/Outside" unique_id=911583692]
+[node name="OutsideBackground" type="TextureRect" parent="Control/Outside" unique_id=911583692]
 z_index = -2
 layout_mode = 0
-offset_left = 155.0
-offset_top = 49.0
-offset_right = 1042.0
-offset_bottom = 419.0
+offset_left = 174.0
+offset_top = 20.0
+offset_right = 1061.0
+offset_bottom = 390.0
 mouse_filter = 2
-texture = ExtResource("5_7mycd")
+texture = ExtResource("20_4k2k6")
 expand_mode = 1
 stretch_mode = 5
-metadata/_edit_lock_ = true
 
 [node name="Wolf" type="Control" parent="Control/Outside" unique_id=1963855325]
 anchors_preset = 0
@@ -341,12 +345,6 @@ offset_top = 159.0
 offset_right = 722.0
 offset_bottom = 314.0
 script = ExtResource("9_wolf")
-
-[node name="WolfSprite" type="Sprite2D" parent="Control/Outside/Wolf" unique_id=561048107]
-z_index = -1
-position = Vector2(91.999985, 91.00001)
-scale = Vector2(0.21972658, 0.21972658)
-texture = ExtResource("16_d13ii")
 
 [node name="WolfButton" type="Button" parent="Control/Outside/Wolf" unique_id=966970678]
 layout_mode = 1
@@ -979,3 +977,11 @@ script = ExtResource("35_4lmeg")
 [node name="BlinkAnimation" type="AnimatedSprite2D" parent="ActionCutscene/CanvasLayer/BlinkHolder" unique_id=246777495]
 sprite_frames = SubResource("SpriteFrames_4k2k6")
 centered = false
+[node name="Act1Cutscene" type="Node" parent="." unique_id=389181303]
+script = ExtResource("32_jq2sk")
+
+[node name="FloodlightSound" type="AudioStreamPlayer" parent="." unique_id=171130465]
+stream = ExtResource("33_4k2k6")
+
+[node name="FlickerSound" type="AudioStreamPlayer" parent="." unique_id=1461693201]
+stream = ExtResource("35_0rl1p")
