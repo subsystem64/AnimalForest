@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
 [ext_resource type="Script" uid="uid://dp4xclick15pd" path="res://phone.gd" id="12_82xsv"]
-[ext_resource type="Script" uid="uid://cr1h8ov0ay3s4" path="res://cutscene.gd" id="13_cutscene"]
+[ext_resource type="Script" path="res://cutscene.gd" id="13_cutscene"]
 [ext_resource type="Texture2D" uid="uid://bsv1nbp3l032n" path="res://assets/TableAssets/phone_ringlines.png" id="13_ryguw"]
 [ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
 [ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
@@ -986,3 +986,6 @@ stream = ExtResource("33_4k2k6")
 
 [node name="FlickerSound" type="AudioStreamPlayer" parent="." unique_id=1461693201]
 stream = ExtResource("35_0rl1p")
+
+[node name="WoundedWolfGrowl" type="AudioStreamPlayer" parent="." unique_id=1773031335]
+stream = ExtResource("39_come4")
