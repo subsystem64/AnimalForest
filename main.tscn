@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bxfpoa1t4sa6v" path="res://assets/HungryWolf/HungaryWolfThemed.png" id="24_gngh3"]
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
@@ -48,8 +48,8 @@
 [ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
 [ext_resource type="Texture2D" uid="uid://374xji87hiv7" path="res://assets/BlinkAnimation/blink5.png" id="39_gngh3"]
 [ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
-[ext_resource type="Script" path="res://act_2_cutscene.gd" id="49_0cbny"]
-[ext_resource type="Script" path="res://act_3_cutscene.gd" id="50_hrvbo"]
+[ext_resource type="Script" uid="uid://d2mniou0adhsw" path="res://act_2_cutscene.gd" id="49_0cbny"]
+[ext_resource type="Script" uid="uid://dd6y0mecqi6tq" path="res://act_3_cutscene.gd" id="50_hrvbo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4k2k6"]
 animations = [{
@@ -114,6 +114,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_4k2k6")
+act = null
+score = null
 metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="." unique_id=1843364932]

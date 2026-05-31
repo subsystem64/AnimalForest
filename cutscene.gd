@@ -5,8 +5,8 @@ const ITEM_CUTSCENES := {
 	"Food": "FoodAction",
 }
 
-@onready var blink_holder: Control = $CanvasLayer/BlinkHolder
-@onready var main: Control = $".."
+@onready var blink_holder = $CanvasLayer/BlinkHolder
+@onready var main = $".."
 
 var can_close_after_release := false
 var is_closing := false
@@ -55,17 +55,21 @@ func _close_to_main_scene() -> void:
 	is_closing = true
 	can_close_after_release = false
 
-	await blink_holder.call("play_transition")
-
-	if main.has_method("do_act_transition"):
-		main.call("do_act_transition", current_item_name)
-	else:
-		push_warning("Main is missing do_act_transition")
+	await blink_holder.play_close()
 
 	visible = false
 	_hide_cutscenes()
 	is_closing = false
+
+	blink_holder.play_open()
+
+	if main.has_method("do_act_transition"):
+		await main.do_act_transition(current_item_name)
+	else:
+		push_warning("Main is missing do_act_transition")
+
 	current_item_name = ""
+	
 
 
 func _hide_cutscenes() -> void:

@@ -35,7 +35,8 @@ const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.
 		score_changed.emit(score)
 
 @onready var outside_background: TextureRect = $Control/Outside/OutsideBackground
-@onready var phone: TextureButton = $Control/Desk/Phone
+@onready var phone = $Control/Desk/Phone
+@onready var blink_holder = $ActionCutscene/CanvasLayer/BlinkHolder
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,19 +54,30 @@ func advance_level() -> void:
 	
 	if  act == 2:
 		$Act2Cutscene.start_act2_cutscene()
-	elif act == 2:
+		await $Act2Cutscene.act_2_cutscene_started
+		blink_holder.play_open()
+	elif act == 3:
 		$Act3Cutscene.start_act3_cutscene()
+		await $Act3Cutscene.act_3_cutscene_started
+		blink_holder.play_open()
+	
+	
 
 func do_act_transition(item_name: String) -> void:
 	var item_score := score_item_for_current_act(item_name)
 	outside_background.texture = MORNING_BACKGROUND
 
 	if phone.has_method("do_phone_call"):
-		phone.call("do_phone_call", act, item_score)
+		var phone_call_started := bool(phone.call("do_phone_call", act, item_score))
+		if phone_call_started and phone.has_signal("phone_call_ended"):
+			await phone.phone_call_ended
+		elif phone_call_started:
+			push_warning("Phone is missing phone_call_ended")
 	else:
 		push_warning("Phone is missing do_phone_call")
 
-	advance_level()
+	await blink_holder.play_close()
+	await advance_level()
 
 
 func score_item_for_current_act(item_name: String) -> int:
@@ -74,10 +86,11 @@ func score_item_for_current_act(item_name: String) -> int:
 		return 0
 
 	var act_scores: Array = ITEM_ACT_SCORES[item_name] as Array
-	if act < 0 or act >= act_scores.size():
+	var score_index := act - 1
+	if score_index < 0 or score_index >= act_scores.size():
 		push_warning("Missing score value for item %s in act %s" % [item_name, act])
 		return 0
 
-	var item_score := int(act_scores[act])
+	var item_score := int(act_scores[score_index])
 	score += item_score
 	return item_score

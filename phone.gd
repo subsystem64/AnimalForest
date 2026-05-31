@@ -1,5 +1,7 @@
 extends TextureButton
 
+signal phone_call_ended
+
 const PHONE_DIALOGUES := [
 	[],
 	# Act 1
@@ -111,12 +113,13 @@ func start_ringing() -> void:
 	ring_sound.play()
 
 
-func do_phone_call(call_act: int, item_score: int) -> void:
+func do_phone_call(call_act: int, item_score: int) -> bool:
 	dialogue_lines = _get_dialogue_lines(call_act, item_score)
 	if dialogue_lines.is_empty():
-		return
+		return false
 
 	start_ringing()
+	return true
 
 
 func _get_dialogue_lines(call_act: int, item_score: int) -> Array:
@@ -184,3 +187,4 @@ func end_call() -> void:
 	in_call = false
 	dialogue_box.visible = false
 	slam_sound.play()
+	phone_call_ended.emit()
