@@ -1072,11 +1072,11 @@ stream = ExtResource("33_4k2k6")
 [node name="FlickerSound" type="AudioStreamPlayer" parent="Act1Cutscene" unique_id=1461693201]
 stream = ExtResource("35_0rl1p")
 
-[node name="WoundedWolfGrowl" type="AudioStreamPlayer" parent="." unique_id=1773031335]
-stream = ExtResource("39_come4")
-
 [node name="Act2Cutscene" type="Node" parent="." unique_id=1169604688]
 script = ExtResource("49_0cbny")
 
 [node name="Act3Cutscene" type="Node" parent="." unique_id=1033794943]
 script = ExtResource("50_hrvbo")
+
+[node name="WoundedWolfGrowl" type="AudioStreamPlayer" parent="Act3Cutscene" unique_id=1773031335]
+stream = ExtResource("39_come4")
