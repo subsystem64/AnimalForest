@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -31,8 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://bxfpoa1t4sa6v" path="res://assets/HungryWolf/HungaryWolfThemed.png" id="24_gngh3"]
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
+[ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
-[ext_resource type="Script" path="res://act_1_cutscene.gd" id="32_jq2sk"]
+[ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
@@ -713,6 +715,22 @@ grow_vertical = 2
 script = ExtResource("10_animalia")
 metadata/_edit_lock_ = true
 
+[node name="AnimaliaBackground" type="TextureRect" parent="OpenAnimalia" unique_id=1437437924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -240.0
+offset_right = 160.0
+offset_bottom = 236.98834
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_0n3wm")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="AnimaliaText" type="RichTextLabel" parent="OpenAnimalia" unique_id=1794980687]
 z_index = 1
 layout_mode = 1
@@ -740,7 +758,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 0.5058824, 1)
+color = Color(1, 1, 1, 0)
 metadata/_edit_lock_ = true
 
 [node name="FlipNext" type="TextureButton" parent="OpenAnimalia" unique_id=2008015980]
@@ -750,12 +768,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -13.0
+offset_top = -286.0
+offset_right = 27.0
+offset_bottom = -227.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -764,20 +783,22 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_left = -31.0
+offset_top = -285.0
+offset_right = 8.0
+offset_bottom = -227.0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Close" type="TextureButton" parent="OpenAnimalia" unique_id=1391992266]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 326.0
+offset_top = 13.0
+offset_right = 363.0
+offset_bottom = 50.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -819,6 +840,22 @@ grow_vertical = 2
 script = ExtResource("11_notebook")
 metadata/_edit_lock_ = true
 
+[node name="NotebookBackground" type="TextureRect" parent="OpenNotebook" unique_id=207233740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -182.0
+offset_right = 208.0
+offset_bottom = 193.18054
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_qnost")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="NotebookText" type="RichTextLabel" parent="OpenNotebook" unique_id=595743048]
 z_index = 1
 layout_mode = 1
@@ -846,7 +883,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 0.5058824, 1)
+color = Color(1, 1, 1, 0)
 metadata/_edit_lock_ = true
 
 [node name="FlipNext" type="TextureButton" parent="OpenNotebook" unique_id=660280666]
@@ -856,12 +893,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -1.0
+offset_top = -297.0
+offset_right = 36.0
+offset_bottom = -242.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -870,20 +908,22 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_left = -36.0
+offset_top = -296.0
+offset_right = -1.0
+offset_bottom = -242.0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Close" type="TextureButton" parent="OpenNotebook" unique_id=946562887]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 331.0
+offset_top = 15.0
+offset_right = 368.0
+offset_bottom = 52.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("19_cegan")
 ignore_texture_size = true
 stretch_mode = 0
 
