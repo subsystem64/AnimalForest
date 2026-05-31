@@ -10,6 +10,7 @@ const ITEM_CUTSCENES := {
 
 var can_close_after_release := false
 var is_closing := false
+var current_item_name := ""
 
 
 func _ready() -> void:
@@ -35,6 +36,7 @@ func show_for_item(item_name: String) -> void:
 	visible = true
 	can_close_after_release = false
 	is_closing = false
+	current_item_name = item_name
 
 	if not item_name in ITEM_CUTSCENES:
 		push_warning("Missing action cutscene item: %s" % item_name)
@@ -55,6 +57,11 @@ func _close_to_main_scene() -> void:
 
 	await blink_holder.call("play_transition")
 
+	if main.has_method("score_item_for_current_act"):
+		main.call("score_item_for_current_act", current_item_name)
+	else:
+		push_warning("Main is missing score_item_for_current_act")
+
 	if main.has_method("advance_level"):
 		main.call("advance_level")
 	else:
@@ -63,6 +70,7 @@ func _close_to_main_scene() -> void:
 	visible = false
 	_hide_cutscenes()
 	is_closing = false
+	current_item_name = ""
 
 
 func _hide_cutscenes() -> void:

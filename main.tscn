@@ -947,16 +947,6 @@ texture = ExtResource("33_jq2sk")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BlackRect" type="ColorRect" parent="ActionCutscene" unique_id=737753746]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="ActionCutscene" unique_id=1621524572]
 visible = false
 
