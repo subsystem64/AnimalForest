@@ -37,7 +37,6 @@ const ITEM_MESSAGES := {
 }
 
 const SPECIAL_ITEM_NAMES := [
-	"Phone",
 	"Animalia",
 	"Notepad",
 ]
@@ -50,10 +49,8 @@ const ITEM_USE_DESCRIPTIONS := {
 	"Bedroll": "build a shelter for the wolf?",
 	"Rifle": "shoot the rifle and scare the wolf?",
 	"FirstAidKit": "heal the wolf?",
-	"WoodenPost": "use the wooden post near the wolf?",
-	"Phone": "use the phone?",
-	"Animalia": "check Animalia?",
-	"Notepad": "use the notepad?",
+	"WoodenPost": "build a barrier?",
+	"Phone": "call wildlife services?",
 }
 
 const HOVER_LABEL_OFFSET := Vector2(16, 16)

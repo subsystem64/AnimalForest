@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bxfpoa1t4sa6v" path="res://assets/HungryWolf/HungaryWolfThemed.png" id="24_gngh3"]
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
@@ -622,6 +623,17 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ScoreLabel" type="Label" parent="Control" unique_id=18318733]
+z_index = 99
+layout_mode = 0
+offset_left = 559.0
+offset_top = 620.0
+offset_right = 716.0
+offset_bottom = 669.0
+text = "score label (remove)
+"
+script = ExtResource("28_0n3wm")
+
 [node name="Warning" type="Control" parent="." unique_id=1535746166]
 visible = false
 layout_mode = 1
@@ -1007,10 +1019,10 @@ centered = false
 [node name="Act1Cutscene" type="Node" parent="." unique_id=389181303]
 script = ExtResource("32_jq2sk")
 
-[node name="FloodlightSound" type="AudioStreamPlayer" parent="." unique_id=171130465]
+[node name="FloodlightSound" type="AudioStreamPlayer" parent="Act1Cutscene" unique_id=171130465]
 stream = ExtResource("33_4k2k6")
 
-[node name="FlickerSound" type="AudioStreamPlayer" parent="." unique_id=1461693201]
+[node name="FlickerSound" type="AudioStreamPlayer" parent="Act1Cutscene" unique_id=1461693201]
 stream = ExtResource("35_0rl1p")
 
 [node name="WoundedWolfGrowl" type="AudioStreamPlayer" parent="." unique_id=1773031335]

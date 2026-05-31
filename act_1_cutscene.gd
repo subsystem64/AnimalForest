@@ -1,8 +1,8 @@
 extends Node
 
 @onready var outside_view: TextureRect = $"../Control/Outside/OutsideBackground"
-@onready var floodlight_sound: AudioStreamPlayer = $"../FloodlightSound"
-@onready var flicker_sound: AudioStreamPlayer = $"../FlickerSound"
+@onready var floodlight_sound: AudioStreamPlayer = $"FloodlightSound"
+@onready var flicker_sound: AudioStreamPlayer = $"FlickerSound"
 
 var cutscene_played := false
 
