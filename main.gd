@@ -17,9 +17,9 @@ const ITEM_ACT_SCORES := {
 
 const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.png")
 
-@export_range(0, 2) var act := 0:
+@export_range(1, 3) var act := 1:
 	set(value):
-		var new_act := clampi(value, 0, 2)
+		var new_act := clampi(value, 1, 4)
 		if act == new_act:
 			return
 
@@ -49,7 +49,12 @@ func _process(delta: float) -> void:
 
 
 func advance_level() -> void:
-	act = (act + 1) % 3
+	act = act + 1
+	
+	if  act == 2:
+		$Act2Cutscene.start_act2_cutscene()
+	elif act == 2:
+		$Act3Cutscene.start_act3_cutscene()
 
 func do_act_transition(item_name: String) -> void:
 	var item_score := score_item_for_current_act(item_name)

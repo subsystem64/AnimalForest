@@ -1,6 +1,7 @@
 extends TextureButton
 
 const PHONE_DIALOGUES := [
+	[],
 	# Act 1
 	[
 		[],

@@ -91,11 +91,11 @@ func _update_wolf_closeup_images() -> void:
 	var act: int = main.act
 
 	if territorial_image != null:
-		territorial_image.visible = act == 0
+		territorial_image.visible = act == 1
 	if hungry_image != null:
-		hungry_image.visible = act == 1
+		hungry_image.visible = act == 2
 	if wounded_image != null:
-		wounded_image.visible = act == 2	
+		wounded_image.visible = act == 3	
 
 
 func _find_closeup_image(node_name: String) -> TextureRect:

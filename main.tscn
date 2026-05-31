@@ -48,6 +48,8 @@
 [ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
 [ext_resource type="Texture2D" uid="uid://374xji87hiv7" path="res://assets/BlinkAnimation/blink5.png" id="39_gngh3"]
 [ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
+[ext_resource type="Script" uid="uid://d2mniou0adhsw" path="res://act_2_cutscene.gd" id="49_0cbny"]
+[ext_resource type="Script" uid="uid://dd6y0mecqi6tq" path="res://act_3_cutscene.gd" id="50_hrvbo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4k2k6"]
 animations = [{
@@ -1025,3 +1027,9 @@ stream = ExtResource("35_0rl1p")
 
 [node name="WoundedWolfGrowl" type="AudioStreamPlayer" parent="." unique_id=1773031335]
 stream = ExtResource("39_come4")
+
+[node name="Act2Cutscene" type="Node" parent="." unique_id=1169604688]
+script = ExtResource("49_0cbny")
+
+[node name="Act3Cutscene" type="Node" parent="." unique_id=1033794943]
+script = ExtResource("50_hrvbo")
