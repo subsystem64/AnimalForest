@@ -11,26 +11,23 @@ const WOLF_TERRITORIAL_NAME := "WolfTerritorial"
 const WOLF_HUNGRY_NAME := "WolfHungry"
 const WOLF_WOUNDED_NAME := "WolfWounded"
 
-@export_range(0, 2) var level := 0:
-	set(value):
-		level = clampi(value, 0, 2)
-		if is_node_ready():
-			_update_wolf_closeup_images()
-
 @onready var wolf_button: Button = $WolfButton
 @onready var wolf_closeup: Control = $"../../WolfCloseup"
-@onready var item_selection = $"../.."
+@onready var item_selection = $"../../Shelf"
 @onready var warning: Control = $"../../../Warning"
 @onready var warning_label: RichTextLabel = $"../../../Warning/WarningLabel"
 @onready var yes_button: BaseButton = $"../../../Warning/YesButton"
 @onready var no_button: BaseButton = $"../../../Warning/NoButton"
 @onready var action_cutscene: Control = $"../../../ActionCutscene"
+@onready var main = $"../../.."
 
 
 func _ready() -> void:
 	wolf_closeup.z_index = 100
 	wolf_closeup.mouse_filter = Control.MOUSE_FILTER_STOP
 	warning.z_index = 200
+	if main.has_signal("act_changed"):
+		main.act_changed.connect(_on_main_act_changed)
 	_update_wolf_closeup_images()
 
 	wolf_button.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -91,18 +88,19 @@ func _update_wolf_closeup_images() -> void:
 	var territorial_image := _find_closeup_image(WOLF_TERRITORIAL_NAME)
 	var hungry_image := _find_closeup_image(WOLF_HUNGRY_NAME)
 	var wounded_image := _find_closeup_image(WOLF_WOUNDED_NAME)
+	var act: int = main.act
 
 	if territorial_image != null:
-		territorial_image.visible = level == 0
+		territorial_image.visible = act == 0
 	if hungry_image != null:
-		hungry_image.visible = level == 1
+		hungry_image.visible = act == 1
 	if wounded_image != null:
-		wounded_image.visible = level == 2	
+		wounded_image.visible = act == 2	
 
 
 func _find_closeup_image(node_name: String) -> TextureRect:
 	return wolf_closeup.find_child(node_name, true, false) as TextureRect
 
 
-func advance_level() -> void:
-	level = (level + 1) % 3
+func _on_main_act_changed(_act: int) -> void:
+	_update_wolf_closeup_images()

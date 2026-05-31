@@ -1,25 +1,25 @@
 extends Control
 
 const ITEM_PATHS := {
-	"Water": "Shelf/Water",
-	"Dart": "Shelf/Dart",
-	"Phone": "Desk/Phone",
-	"Animalia": "Desk/Animalia",
-	"Notepad": "Desk/Notepad",
-	"Food": "Shelf/FoodBowl",
-	"Mug": "Shelf/Mug",
-	"Bedroll": "Shelf/BedRoll",
-	"Rifle": "Shelf/Rifle",
-	"FirstAidKit": "Shelf/FirstAidKit",
-	"WoodenPost": "Shelf/WoodenPost",
+	"Water": "Water",
+	"Dart": "Dart",
+	"Phone": "../Desk/Phone",
+	"Animalia": "../Desk/Animalia",
+	"Notepad": "../Desk/Notepad",
+	"Food": "FoodBowl",
+	"Mug": "Mug",
+	"Bedroll": "BedRoll",
+	"Rifle": "Rifle",
+	"FirstAidKit": "FirstAidKit",
+	"WoodenPost": "WoodenPost",
 
 }
 
 const PASS_THROUGH_PATHS := [
-	"Shelf",
-	"Desk",
-	"Outside",
-	"Outside/Wolf",
+	".",
+	"../Desk",
+	"../Outside",
+	"../Outside/Wolf",
 ]
 
 const ITEM_MESSAGES := {
@@ -58,9 +58,9 @@ const ITEM_USE_DESCRIPTIONS := {
 
 const HOVER_LABEL_OFFSET := Vector2(16, 16)
 
-@onready var hover_label: Label = $HoverLabel
-@onready var open_animalia = $"../OpenAnimalia"
-@onready var open_notebook = $"../OpenNotebook"
+@onready var hover_label: Label = $"../HoverLabel"
+@onready var open_animalia = $"../../OpenAnimalia"
+@onready var open_notebook = $"../../OpenNotebook"
 
 var selected_item := ""
 var selected_button: BaseButton

@@ -111,7 +111,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_272bh")
 metadata/_edit_lock_ = true
 
 [node name="Cabin" type="TextureRect" parent="Control" unique_id=829241750]
@@ -136,6 +135,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_272bh")
 metadata/_edit_lock_ = true
 
 [node name="Water" type="TextureButton" parent="Control/Shelf" unique_id=686745095]

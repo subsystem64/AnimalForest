@@ -6,7 +6,7 @@ const ITEM_CUTSCENES := {
 }
 
 @onready var blink_holder: Control = $CanvasLayer/BlinkHolder
-@onready var wolf: Control = $"../Control/Outside/Wolf"
+@onready var main: Control = $".."
 
 var can_close_after_release := false
 var is_closing := false
@@ -55,10 +55,10 @@ func _close_to_main_scene() -> void:
 
 	await blink_holder.call("play_transition")
 
-	if wolf.has_method("advance_level"):
-		wolf.call("advance_level")
+	if main.has_method("advance_level"):
+		main.call("advance_level")
 	else:
-		push_warning("Wolf is missing advance_level")
+		push_warning("Main is missing advance_level")
 
 	visible = false
 	_hide_cutscenes()
