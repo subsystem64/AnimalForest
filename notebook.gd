@@ -121,19 +121,20 @@ func _update_page_counter() -> void:
 	next_button.disabled = page >= page_text.size()
 
 
-func add_inspection_note(note_name: String, note_page: int = 1) -> void:
-	var clamped_page := clampi(note_page, 1, page_text.size())
-	var note_key := "%d:%s" % [clamped_page, note_name]
+func add_inspection_note(note_message: String, note_page: int) -> void:
+	while page_text.size() < note_page:
+		page_text.append("")
+
+	var note_key := "%d:%s" % [note_page, note_message]
 
 	if note_key in inspection_notes:
 		return
 
 	inspection_notes.append(note_key)
-	page_text[clamped_page - 1] += "\n%s" % note_name
 
-	if page == clamped_page:
-		_update_page_counter()
+	page_text[note_page - 1] += "\n• %s" % note_message
 
+	_update_page_counter()
 
 func unlock_post_act_entry(act_number: int, result_type: String) -> void:
 	result_type = result_type.to_lower()

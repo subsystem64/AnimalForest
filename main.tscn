@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bxfpoa1t4sa6v" path="res://assets/HungryWolf/HungaryWolfThemed.png" id="24_gngh3"]
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
-[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
@@ -48,8 +48,8 @@
 [ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
 [ext_resource type="Texture2D" uid="uid://374xji87hiv7" path="res://assets/BlinkAnimation/blink5.png" id="39_gngh3"]
 [ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
-[ext_resource type="Script" uid="uid://d2mniou0adhsw" path="res://act_2_cutscene.gd" id="49_0cbny"]
-[ext_resource type="Script" uid="uid://dd6y0mecqi6tq" path="res://act_3_cutscene.gd" id="50_hrvbo"]
+[ext_resource type="Script" path="res://act_2_cutscene.gd" id="49_0cbny"]
+[ext_resource type="Script" path="res://act_3_cutscene.gd" id="50_hrvbo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4k2k6"]
 animations = [{
@@ -428,9 +428,9 @@ polygon = PackedVector2Array(-91.6001, -1.4842224, -58.178467, 46.555237, -25.15
 position = Vector2(533, 380)
 polygon = PackedVector2Array(-110, 4, -38, 0, -32, 29, -107, 27)
 
-[node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=1878094766]
+[node name="ArcWalk" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=1878094766]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Back" unique_id=417546633]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/ArcWalk" unique_id=417546633]
 position = Vector2(662, 386)
 polygon = PackedVector2Array(-140, -115, -65, -97, -15, -77, 60, 46, 89, 130, 32, 139, 54, 94, -3, 52, -39, 153, -85, 152, -40, 72, -97, 70, -93, 156, -205, 182, -127, 23)
 
@@ -474,9 +474,9 @@ polygon = PackedVector2Array(-88.199814, 25, -42.117874, -21, -14.865112, -26, -
 position = Vector2(506, 344)
 polygon = PackedVector2Array(-118, -2, -38, 0, -32, 29, -119, 30)
 
-[node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=1040486996]
+[node name="Ribs" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=1040486996]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Back" unique_id=1122371194]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Ribs" unique_id=1122371194]
 position = Vector2(657, 367)
 polygon = PackedVector2Array(-111, -141, -20, -128, 65, -95, 37, -16, -133, 20)
 
@@ -507,9 +507,9 @@ metadata/_edit_lock_ = true
 position = Vector2(686, 457)
 polygon = PackedVector2Array(-31.735168, -126.21298, 56.26483, -107.21298, 17.264832, -23.212982, 52.26483, 21.787018, 19.264832, 104.78702, -32.73517, 111.78702, 1.2648315, 36.787018, -68.73517, -24.212982)
 
-[node name="Head" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=181528572]
+[node name="Ears" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=181528572]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Head" unique_id=1461098263]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Ears" unique_id=1461098263]
 position = Vector2(489, 349)
 scale = Vector2(2.0181446, 1)
 polygon = PackedVector2Array(-36.694157, -16.938396, -1.0178261, -9.938396, 45.064083, -28.938396, 30.19897, 29.061604, -3.9908485, 7.0616035, -34.21665, 23.061604)

@@ -1,15 +1,41 @@
 extends Control
 
 const MAGNIFYING_GLASS_OFFSET := Vector2(-30, -30)
-const WOLF_STATE_NOTE_PAGES := {
-	"WolfTerritorial": 1,
-	"WolfHungry": 2,
-	"WolfWounded": 3,
+
+const ACT_NOTE_PAGES := {
+	1: 8,
+	2: 10,
+	3: 12,
+}
+
+const INSPECTION_MESSAGES := {
+	1: {
+		"Tail": "Tail straight up. Cooper was like that with other dogs… especially that yippity little chihuahua down the road.",
+		"Ears": "Ears forward. Almost like it can hear me thinking.",
+		"Eyes": "It keeps looking directly at me. Not moving, not blinking. That can't be good.",
+		"ArcWalk": "It's walking in a circuit. Same radius every time. Like it's drawing a line.",
+		"Mouth": "Not making a sound. At least it’s not angry…",
+	},
+	2: {
+		"Head": "Head lower than last time. Whole posture is different. Hmm…",
+		"Tail": "Tail down. Not tucked under, just... hanging. Like it's tired.",
+		"Eyes": "It's looking at what I'm eating. Has been since I noticed it. Not looking at me. Looking at the food.",
+		"Ribs": "Can see its ribs a little. Not badly, but enough. It's lean.",
+		"Mouth": "Still not making noise, but it feels less ominous today.",
+	},
+	3: {
+		"Leg": "Something's wrong with the back leg.",
+		"Back": "Whole body's pulled inward. Like it's trying to make itself smaller.\nIt's not facing me straight on. Body's turned slightly away. This is unusual…",
+		"Ears": "Ears flat to its head. Coop never did that... Handbook should know.",
+		"Tail": "Tail tucked? That’s the fear one right?",
+		"Mouth": "It's growling. Low, continuous. It's just... standing there, growling, not moving. That’s not scary at all…",
+	}
 }
 
 @onready var magnifying_glass: TextureRect = $MagnifyingGlass
 @onready var scribble_sound: AudioStreamPlayer = $ScribbleSound
 @onready var notebook = $"../../OpenNotebook"
+@onready var main = $"../.."
 
 var inspection_polygons: Array[CollisionPolygon2D] = []
 var hovered_polygon: CollisionPolygon2D
@@ -63,6 +89,7 @@ func _get_hovered_inspection_polygon() -> CollisionPolygon2D:
 			continue
 
 		var local_mouse_position := collision_polygon.get_global_transform().affine_inverse() * mouse_position
+
 		if Geometry2D.is_point_in_polygon(local_mouse_position, collision_polygon.polygon):
 			return collision_polygon
 
@@ -71,10 +98,30 @@ func _get_hovered_inspection_polygon() -> CollisionPolygon2D:
 
 func _collect_hovered_inspection() -> void:
 	var note_area := hovered_polygon.get_parent()
-	var wolf_state := note_area.get_parent()
-	var note_name := note_area.name
-	var note_page: int = WOLF_STATE_NOTE_PAGES[wolf_state.name] as int
+	var note_area_name := note_area.name
+	var act_number: int = main.act
+
+	if not ACT_NOTE_PAGES.has(act_number):
+		push_warning("No note page set for act %d" % act_number)
+		return
+
+	var note_page: int = ACT_NOTE_PAGES[act_number]
+
+	var note_message := _get_note_message(act_number, note_area_name)
+
 	inspection_polygons.erase(hovered_polygon)
 	scribble_sound.play()
-	notebook.add_inspection_note(note_name, note_page)
+	notebook.add_inspection_note(note_message, note_page)
 	hide_magnifying_glass()
+
+
+func _get_note_message(act_number: int, note_area_name: String) -> String:
+	if not INSPECTION_MESSAGES.has(act_number):
+		push_warning("No inspection messages for act %d" % act_number)
+		return note_area_name
+
+	if not INSPECTION_MESSAGES[act_number].has(note_area_name):
+		push_warning("No inspection message for '%s' in act %d" % [note_area_name, act_number])
+		return note_area_name
+
+	return INSPECTION_MESSAGES[act_number][note_area_name]
