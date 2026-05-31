@@ -404,6 +404,7 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="WolfCloseup" type="Control" parent="Control" unique_id=1644426695]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -426,6 +427,7 @@ texture = ExtResource("22_qsp4k")
 expand_mode = 1
 
 [node name="WolfTerritorial" type="TextureRect" parent="Control/WolfCloseup" unique_id=352048285]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
