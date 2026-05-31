@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
@@ -404,7 +404,6 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="WolfCloseup" type="Control" parent="Control" unique_id=1644426695]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -427,7 +426,6 @@ texture = ExtResource("22_qsp4k")
 expand_mode = 1
 
 [node name="WolfTerritorial" type="TextureRect" parent="Control/WolfCloseup" unique_id=352048285]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -464,7 +462,7 @@ polygon = PackedVector2Array(-110, 4, -38, 0, -32, 29, -107, 27)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/ArcWalk" unique_id=417546633]
 position = Vector2(662, 386)
-polygon = PackedVector2Array(-140, -115, -65, -97, -15, -77, 60, 46, 89, 130, 32, 139, 54, 94, -3, 52, -39, 153, -85, 152, -40, 72, -97, 70, -93, 156, -205, 182, -127, 23)
+polygon = PackedVector2Array(-109, 0, -72, -18, 22, -7, 60, 46, 89, 130, 32, 139, 54, 94, 0, 55, -39, 153, -85, 152, -61, 55, -97, 70, -93, 156, -205, 182, -127, 23)
 
 [node name="Mouth" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=511706388]
 
