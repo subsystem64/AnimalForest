@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bsh1k2b827ocq"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_4k2k6"]
+[ext_resource type="Script" uid="uid://cwxlsmuv5tr84" path="res://main.gd" id="1_4k2k6"]
 [ext_resource type="Script" uid="uid://cu31p45t4el0y" path="res://item_selection.gd" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://pfd1xq8bklaj" path="res://assets/Environment/cabin_no_border.png" id="2_272bh"]
 [ext_resource type="Texture2D" uid="uid://d0w6iv780eaom" path="res://assets/TableAssets/waterBowl.png" id="3_272bh"]
 [ext_resource type="Texture2D" uid="uid://bgjlsluikda6t" path="res://assets/TableAssets/tranquilizer.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://c413qjlly3cah" path="res://assets/TableAssets/phone.png" id="5_5vw27"]
-[ext_resource type="Texture2D" uid="uid://bvq0dsu7emt7k" path="res://assets/dusk_no_wolf.jpeg" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bxrncgtuu4hjl" path="res://assets/TableAssets/foodBowl.png" id="5_yaehf"]
 [ext_resource type="Texture2D" uid="uid://1twg1ugwpgn4" path="res://assets/TableAssets/mug.png" id="6_074og"]
 [ext_resource type="Texture2D" uid="uid://fkr2lqiqtle7" path="res://assets/TableAssets/CampingBedroll.png" id="7_cegan"]
@@ -20,12 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
 [ext_resource type="Script" uid="uid://dp4xclick15pd" path="res://phone.gd" id="12_82xsv"]
-[ext_resource type="Script" path="res://cutscene.gd" id="13_cutscene"]
+[ext_resource type="Script" uid="uid://cr1h8ov0ay3s4" path="res://cutscene.gd" id="13_cutscene"]
 [ext_resource type="Texture2D" uid="uid://bsv1nbp3l032n" path="res://assets/TableAssets/phone_ringlines.png" id="13_ryguw"]
 [ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
 [ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://b1p5b18i5psw2" path="res://assets/Sound/PhoneSlam.mp3" id="16_0odxb"]
-[ext_resource type="Texture2D" uid="uid://5qw1k15lgybn" path="res://assets/TerritorialWolf/TerritorialWolfLeft.png" id="17_d13ii"]
 [ext_resource type="Texture2D" uid="uid://5me7yc83irma" path="res://assets/HungryWolf/HungryWolf.png" id="18_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dtvyn7sot0dx3" path="res://assets/Environment/Zoom_Border.png" id="18_getpj"]
 [ext_resource type="Texture2D" uid="uid://by6p1oyow84o4" path="res://assets/WoundedWolf/WoundedWolf.png" id="19_0odxb"]
@@ -38,12 +36,12 @@
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
-[ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
 [ext_resource type="Script" uid="uid://7a4hqadi5eir" path="res://blink.gd" id="35_4lmeg"]
 [ext_resource type="Texture2D" uid="uid://cxwwygprxsnwo" path="res://assets/BlinkAnimation/blink1.png" id="35_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://dpv465wwm4u5b" path="res://assets/BlinkAnimation/blink2.png" id="36_4lmeg"]
 [ext_resource type="Texture2D" uid="uid://diacwcrrx52tt" path="res://assets/BlinkAnimation/blink3.png" id="37_0cp0l"]
 [ext_resource type="Texture2D" uid="uid://cu1gwfpurx6jo" path="res://assets/BlinkAnimation/blink4.png" id="38_d2t1y"]
+[ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
 [ext_resource type="Texture2D" uid="uid://374xji87hiv7" path="res://assets/BlinkAnimation/blink5.png" id="39_gngh3"]
 [ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
 
@@ -359,7 +357,6 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="WolfCloseup" type="Control" parent="Control" unique_id=1644426695]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -368,20 +365,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_inspect")
-metadata/_edit_lock_ = true
-
-[node name="Background" type="TextureRect" parent="Control/WolfCloseup" unique_id=616936756]
-z_index = 3
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 0
-texture = ExtResource("5_7mycd")
-expand_mode = 1
-stretch_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="MagnifyingGlass" type="TextureRect" parent="Control/WolfCloseup" unique_id=1567743610]
@@ -395,48 +378,43 @@ texture = ExtResource("22_qsp4k")
 expand_mode = 1
 
 [node name="WolfTerritorial" type="TextureRect" parent="Control/WolfCloseup" unique_id=352048285]
-visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 229.0
-offset_top = 98.0
-offset_right = -217.0
-offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("17_d13ii")
+texture = ExtResource("20_4k2k6")
 expand_mode = 1
-stretch_mode = 4
+stretch_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="Tail" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=624905787]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Tail" unique_id=1947711109]
-position = Vector2(531.1165, 120.3041)
-polygon = PackedVector2Array(-53.25152, 6.0469937, -17.251518, -49.953007, 32.748478, -121.95301, 72.74849, -88.95301, 59.88348, 13.695902, 21.748482, 66.04699, -49.25152, 89.04699, -98.25151, 35.046993)
+position = Vector2(756, 282)
+polygon = PackedVector2Array(-53, 20, 35, -65, 43, 4, 22, 61, -42, 77, -87, 26)
 
 [node name="Ears" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=692011991]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Ears" unique_id=905780798]
-position = Vector2(306.77515, 138)
-scale = Vector2(2.0181446, 1)
-polygon = PackedVector2Array(-87.0974, 6, -53.89859, 43, -25.159317, 8, -22.186295, 95, -54.39409, 66, -88.58391, 88)
+position = Vector2(554.00006, 307.08136)
+scale = Vector2(1.6157196, 0.7285676)
+polygon = PackedVector2Array(-91.6001, -1.4842224, -58.178467, 46.555237, -25.159317, 8, -22.186295, 95, -59.41629, 67.143585, -88.58391, 88)
 
 [node name="Eyes" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=1357524662]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Eyes" unique_id=802517144]
-position = Vector2(269, 235)
-polygon = PackedVector2Array(-118, -2, -38, 0, -32, 29, -119, 30)
+position = Vector2(533, 380)
+polygon = PackedVector2Array(-110, 4, -38, 0, -32, 29, -107, 27)
 
 [node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=1878094766]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Back" unique_id=417546633]
-position = Vector2(401, 258)
-polygon = PackedVector2Array(-111, -141, -42, -135, 28, -88, 67.26294, -6.644287, 168, 137, 91, 154, 17, 43, -22, 153, -60, 159, -40, 72, -84, 72, -82, 164, -205, 182, -127, 23)
+position = Vector2(671, 387)
+polygon = PackedVector2Array(-140, -115, -62, -100, -44, -60, 60, 46, 89, 130, 32, 139, 17, 43, -22, 153, -60, 159, -40, 72, -84, 72, -82, 164, -205, 182, -127, 23)
 
 [node name="WolfHungry" type="TextureRect" parent="Control/WolfCloseup" unique_id=400246889]
 visible = false
@@ -964,6 +942,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ActionCutscene" unique_id=1621524572]
+visible = false
 
 [node name="BlinkHolder" type="Control" parent="ActionCutscene/CanvasLayer" unique_id=2073164015]
 layout_mode = 3
