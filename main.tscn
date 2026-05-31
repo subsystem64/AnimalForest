@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -27,10 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://dtvyn7sot0dx3" path="res://assets/Environment/Zoom_Border.png" id="18_getpj"]
 [ext_resource type="Texture2D" uid="uid://cjy14k8q5rk1q" path="res://icon.svg" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://52jcs2wsp117" path="res://assets/TerritorialWolf/TerritorialWolf.png" id="20_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://c0lf3fngoeexp" path="res://assets/Environment/MorningBackground.png" id="20_f6a44"]
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bxfpoa1t4sa6v" path="res://assets/HungryWolf/HungaryWolfThemed.png" id="24_gngh3"]
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
@@ -345,7 +346,7 @@ offset_top = 20.0
 offset_right = 1061.0
 offset_bottom = 390.0
 mouse_filter = 2
-texture = ExtResource("20_4k2k6")
+texture = ExtResource("20_f6a44")
 expand_mode = 1
 stretch_mode = 5
 

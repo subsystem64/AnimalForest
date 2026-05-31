@@ -1,5 +1,65 @@
 extends TextureButton
 
+const PHONE_DIALOGUES := [
+	# Act 1
+	[
+		[],
+		# Score 1
+		[
+			"James:  Wolf was acting strange last night sir - kept circling where you left that food out. Something's got it confused.",
+			"Marcus:  Scare them away if they come close. I will not have wolves disrupting the site.",
+		],
+		# Score 2
+		[
+			"James:  Heard you scared off the wolf last night. Some of the crew are on edge about it.",
+			"Marcus:  Noted. Keep working. It'll sort itself out.",
+		],
+		# Score 3
+		[
+			"James:  Status report - wolf was back last night, circling the perimeter again. Didn't come close though.",
+			"Marcus:  Leave it. It's doing what wolves do. Make sure the crew knows not to engage it.",
+		],
+	],
+	# Act 2
+	[
+		[],
+		# Score 1
+		[
+			"Dale:  We caught that wolf in a snare this morning sir. Hell of a mess. What do you want us to do with it?",
+			"Marcus:  ...Call wildlife services. And tell the crew that was not the plan.",
+		],
+		# Score 2
+		[
+			"Dale:  Wolf's still hanging around the perimeter. Hasn't caused trouble but it's not going away either.",
+			"Marcus:  Keep an eye on it. Don't engage. I'll figure it out.",
+		],
+		# Score 3
+		[
+			"Dale:  Wolf's been around again. Crew's a bit spooked. You feeding it now?",
+			"Marcus:  Once. It was hungry, not aggressive. Just keep your distance and it'll keep its.",
+		],
+	],
+	# Act 3
+	[
+		[],
+		# Score 1
+		[
+			"Dr. Osei:  Marcus. Phase 3. I know you've been out there. I know what that land looks like. I just wanted you to hear a different voice before tomorrow.",
+			"Marcus:  ...I appreciate the call. I'll think about it.",
+		],
+		# Score 2
+		[
+			"Dr. Osei:  Marcus. Phase 3 goes to committee tomorrow. I'm calling everyone I know in that district. Is there anything you want to say before it's final?",
+			"Marcus:  I'll see what I can do from the inside. No promises.",
+		],
+		# Score 3
+		[
+			"Dr. Osei:  Marcus. I heard you helped a wolf last night. I also heard about Phase 3. The door here is still open, if you want to talk before the meeting.",
+			"Marcus:  I'll be at the meeting tomorrow. I'm not sure yet what I'm going to say. But I'll be there.",
+		],
+	],
+]
+
 @onready var ring_lines: TextureRect = $RingLines
 @onready var ring_sound: AudioStreamPlayer = $RingSound
 @onready var pickup_sound: AudioStreamPlayer = $PickupSound
@@ -13,11 +73,8 @@ var in_call := false
 var base_pos: Vector2
 var jitter_timer := 0.0
 var dialogue_index := 0
+var dialogue_lines: Array = []
 
-var dialogue_lines := [
-	"James:  Status report — wolf was back last night, circling the perimeter again. Didn't come close though.",
-	"Marcus:  Leave it. It's doing what wolves do. Make sure the crew knows not to engage it."
-]
 
 func _ready() -> void:
 	base_pos = position
@@ -28,7 +85,8 @@ func _ready() -> void:
 	dialogue_box.visible = false
 
 	# TESTING ONLY. Remove later when story events trigger the call.
-	# 	start_ringing()
+	# start_ringing()
+
 
 func _process(delta: float) -> void:
 	if is_ringing:
@@ -41,6 +99,7 @@ func _process(delta: float) -> void:
 				randi_range(-1, 1)
 			)
 
+
 func start_ringing() -> void:
 	if is_ringing or in_call:
 		return
@@ -50,15 +109,44 @@ func start_ringing() -> void:
 	ring_lines.visible = true
 	ring_sound.play()
 
+
+func do_phone_call(call_act: int, item_score: int) -> void:
+	dialogue_lines = _get_dialogue_lines(call_act, item_score)
+	if dialogue_lines.is_empty():
+		return
+
+	start_ringing()
+
+
+func _get_dialogue_lines(call_act: int, item_score: int) -> Array:
+	if call_act < 0 or call_act >= PHONE_DIALOGUES.size():
+		push_warning("Missing phone dialogue for act: %s" % call_act)
+		return []
+
+	var act_dialogues: Array = PHONE_DIALOGUES[call_act] as Array
+	if item_score < 0 or item_score >= act_dialogues.size():
+		push_warning("Missing phone dialogue for act %s score %s" % [call_act, item_score])
+		return []
+
+	var selected_dialogue: Array = act_dialogues[item_score] as Array
+	if selected_dialogue.is_empty():
+		push_warning("Missing phone dialogue for act %s score %s" % [call_act, item_score])
+		return []
+
+	return selected_dialogue.duplicate()
+
+
 func stop_ringing() -> void:
 	is_ringing = false
 	position = base_pos
 	ring_lines.visible = false
 	ring_sound.stop()
 
+
 func _on_pressed() -> void:
 	if is_ringing:
 		pick_up_phone()
+
 
 func pick_up_phone() -> void:
 	stop_ringing()
@@ -69,8 +157,10 @@ func pick_up_phone() -> void:
 	dialogue_box.visible = true
 	show_dialogue_line()
 
+
 func show_dialogue_line() -> void:
 	dialogue_label.text = dialogue_lines[dialogue_index]
+
 
 func _on_dialogue_box_gui_input(event: InputEvent) -> void:
 	if not in_call:
@@ -79,6 +169,7 @@ func _on_dialogue_box_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		advance_dialogue()
 
+
 func advance_dialogue() -> void:
 	dialogue_index += 1
 
@@ -86,6 +177,7 @@ func advance_dialogue() -> void:
 		end_call()
 	else:
 		show_dialogue_line()
+
 
 func end_call() -> void:
 	in_call = false

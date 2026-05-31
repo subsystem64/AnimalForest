@@ -57,15 +57,10 @@ func _close_to_main_scene() -> void:
 
 	await blink_holder.call("play_transition")
 
-	if main.has_method("score_item_for_current_act"):
-		main.call("score_item_for_current_act", current_item_name)
+	if main.has_method("do_act_transition"):
+		main.call("do_act_transition", current_item_name)
 	else:
-		push_warning("Main is missing score_item_for_current_act")
-
-	if main.has_method("advance_level"):
-		main.call("advance_level")
-	else:
-		push_warning("Main is missing advance_level")
+		push_warning("Main is missing do_act_transition")
 
 	visible = false
 	_hide_cutscenes()

@@ -15,6 +15,8 @@ const ITEM_ACT_SCORES := {
 	"Phone": 	   [2, 2, 2],
 }
 
+const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.png")
+
 @export_range(0, 2) var act := 0:
 	set(value):
 		var new_act := clampi(value, 0, 2)
@@ -32,6 +34,9 @@ const ITEM_ACT_SCORES := {
 		score = value
 		score_changed.emit(score)
 
+@onready var outside_background: TextureRect = $Control/Outside/OutsideBackground
+@onready var phone: TextureButton = $Control/Desk/Phone
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,15 +51,28 @@ func _process(delta: float) -> void:
 func advance_level() -> void:
 	act = (act + 1) % 3
 
+func do_act_transition(item_name: String) -> void:
+	var item_score := score_item_for_current_act(item_name)
+	outside_background.texture = MORNING_BACKGROUND
 
-func score_item_for_current_act(item_name: String) -> void:
+	if phone.has_method("do_phone_call"):
+		phone.call("do_phone_call", act, item_score)
+	else:
+		push_warning("Phone is missing do_phone_call")
+
+	advance_level()
+
+
+func score_item_for_current_act(item_name: String) -> int:
 	if not item_name in ITEM_ACT_SCORES:
 		push_warning("Missing score values for item: %s" % item_name)
-		return
+		return 0
 
 	var act_scores: Array = ITEM_ACT_SCORES[item_name] as Array
 	if act < 0 or act >= act_scores.size():
 		push_warning("Missing score value for item %s in act %s" % [item_name, act])
-		return
+		return 0
 
-	score += int(act_scores[act])
+	var item_score := int(act_scores[act])
+	score += item_score
+	return item_score
