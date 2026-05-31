@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://d4j50dgtdvlda"
+path="res://.godot/imported/Bookxel_Bold_16.fnt-2ac158a3b000af3f4d3c0b346402b9db.fontdata"
+
+[deps]
+
+source_file="res://assets/Fonts/bookxel-download/bookxel/playdate/Bookxel_Bold_16.fnt"
+dest_files=["res://.godot/imported/Bookxel_Bold_16.fnt-2ac158a3b000af3f4d3c0b346402b9db.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

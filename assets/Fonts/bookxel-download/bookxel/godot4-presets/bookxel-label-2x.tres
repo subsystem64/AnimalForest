@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://cj7hif6m6w5ea"]
+
+[ext_resource type="FontFile" uid="uid://ckpa60hjh1kbi" path="res://bookxel.ttf" id="1_upvhh"]
+
+[sub_resource type="FontVariation" id="FontVariation_e7ngo"]
+base_font = ExtResource("1_upvhh")
+
+[resource]
+line_spacing = 1.0
+font = SubResource("FontVariation_e7ngo")
+font_size = 32
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)

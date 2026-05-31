@@ -1,0 +1,14 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://cpnb64bxs7dg7"]
+
+[ext_resource type="FontFile" uid="uid://ckpa60hjh1kbi" path="res://bookxel.ttf" id="1_p0fbo"]
+
+[sub_resource type="FontVariation" id="FontVariation_e7ngo"]
+base_font = ExtResource("1_p0fbo")
+
+[resource]
+font = SubResource("FontVariation_e7ngo")
+font_size = 64
+outline_size = 4
+outline_color = Color(0.0544, 0.481893, 0.68, 1)
+shadow_size = 12
+shadow_color = Color(0.1736, 0.27664, 0.56, 1)
