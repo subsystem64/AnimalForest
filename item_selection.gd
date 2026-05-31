@@ -12,7 +12,7 @@ const ITEM_PATHS := {
 	"Rifle": "Rifle",
 	"FirstAidKit": "FirstAidKit",
 	"WoodenPost": "WoodenPost",
-
+	"Rope": "Rope"
 }
 
 const PASS_THROUGH_PATHS := [
@@ -34,6 +34,7 @@ const ITEM_MESSAGES := {
 	"Phone": "Phone",
 	"Animalia": "Animalia",
 	"Notepad": "Notepad",
+	"Rope": "Rope"
 }
 
 const SPECIAL_ITEM_NAMES := [
@@ -51,6 +52,7 @@ const ITEM_USE_DESCRIPTIONS := {
 	"FirstAidKit": "heal the wolf?",
 	"WoodenPost": "build a barrier?",
 	"Phone": "call wildlife services?",
+	"Rope": "trap it?"
 }
 
 const HOVER_LABEL_OFFSET := Vector2(16, 16)
