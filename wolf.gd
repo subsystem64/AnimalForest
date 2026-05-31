@@ -10,9 +10,13 @@ const CLOSE_HITBOX_NAMES := [
 const WOLF_TERRITORIAL_NAME := "WolfTerritorial"
 const WOLF_HUNGRY_NAME := "WolfHungry"
 const WOLF_WOUNDED_NAME := "WolfWounded"
+const CRICKET_NIGHT_VOLUME_DB := -24.0
+const FOREST_DAWN_VOLUME_DB := -36.0
 
 @onready var wolf_button: Button = $WolfButton
 @onready var wolf_closeup: Control = $"../../WolfCloseup"
+@onready var cricket_night_sounds: AudioStreamPlayer = $"../../WolfCloseup/WolfTerritorial/CricketNightSounds"
+@onready var forest_dawn_sounds: AudioStreamPlayer = $"../../WolfCloseup/WolfHungry/ForestDawnSounds"
 @onready var item_selection = $"../../Shelf"
 @onready var warning: Control = $"../../../Warning"
 @onready var warning_label: RichTextLabel = $"../../../Warning/WarningLabel"
@@ -26,6 +30,10 @@ func _ready() -> void:
 	wolf_closeup.z_index = 100
 	wolf_closeup.mouse_filter = Control.MOUSE_FILTER_STOP
 	warning.z_index = 200
+	yes_button.z_index = 201
+	no_button.z_index = 201
+	cricket_night_sounds.volume_db = CRICKET_NIGHT_VOLUME_DB
+	forest_dawn_sounds.volume_db = FOREST_DAWN_VOLUME_DB
 	if main.has_signal("act_changed"):
 		main.act_changed.connect(_on_main_act_changed)
 	_update_wolf_closeup_images()
@@ -54,10 +62,16 @@ func _on_wolf_pressed() -> void:
 		return
 
 	wolf_closeup.visible = true
+	if main.act == 1 and not cricket_night_sounds.playing:
+		cricket_night_sounds.play()
+	if main.act == 2 and not forest_dawn_sounds.playing:
+		forest_dawn_sounds.play()
 
 
 func _on_closeup_border_pressed() -> void:
 	wolf_closeup.visible = false
+	cricket_night_sounds.stop()
+	forest_dawn_sounds.stop()
 
 
 func _on_warning_yes_pressed() -> void:
