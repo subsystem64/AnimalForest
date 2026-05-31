@@ -1,6 +1,6 @@
 extends Control
 
-const BLINK_SPEED := 8.0
+const BLINK_SPEED := 10.0
 
 @onready var blink: AnimatedSprite2D = $BlinkAnimation
 @onready var blink_layer: CanvasLayer = get_parent() as CanvasLayer

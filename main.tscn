@@ -24,12 +24,12 @@
 [ext_resource type="AudioStream" uid="uid://kgjm26286xla" path="res://assets/Sound/freesound_community-022059_old-rotary-phone-ringing-68614.mp3" id="14_d13ii"]
 [ext_resource type="AudioStream" uid="uid://31h6ekbrsks0" path="res://assets/Sound/PhonePickup.mp3" id="15_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://b1p5b18i5psw2" path="res://assets/Sound/PhoneSlam.mp3" id="16_0odxb"]
-[ext_resource type="Texture2D" uid="uid://5me7yc83irma" path="res://assets/HungryWolf/HungryWolf.png" id="18_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dtvyn7sot0dx3" path="res://assets/Environment/Zoom_Border.png" id="18_getpj"]
-[ext_resource type="Texture2D" uid="uid://by6p1oyow84o4" path="res://assets/WoundedWolf/WoundedWolf.png" id="19_0odxb"]
 [ext_resource type="Texture2D" uid="uid://cjy14k8q5rk1q" path="res://icon.svg" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://52jcs2wsp117" path="res://assets/TerritorialWolf/TerritorialWolf.png" id="20_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cpvqfrytd4jk6" path="res://assets/Environment/MagnifyingGlass.png" id="22_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://bxfpoa1t4sa6v" path="res://assets/HungryWolf/HungaryWolfThemed.png" id="24_gngh3"]
+[ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
 [ext_resource type="Script" path="res://act_1_cutscene.gd" id="32_jq2sk"]
@@ -62,6 +62,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("39_gngh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0n3wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0n3wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0n3wm")
 }, {
 "duration": 1.0,
 "texture": ExtResource("40_0n3wm")
@@ -357,6 +366,7 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="WolfCloseup" type="Control" parent="Control" unique_id=1644426695]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -368,6 +378,7 @@ script = ExtResource("10_inspect")
 metadata/_edit_lock_ = true
 
 [node name="MagnifyingGlass" type="TextureRect" parent="Control/WolfCloseup" unique_id=1567743610]
+visible = false
 z_index = 4
 layout_mode = 0
 offset_left = 216.0
@@ -378,6 +389,7 @@ texture = ExtResource("22_qsp4k")
 expand_mode = 1
 
 [node name="WolfTerritorial" type="TextureRect" parent="Control/WolfCloseup" unique_id=352048285]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 15
@@ -385,7 +397,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 0
 texture = ExtResource("20_4k2k6")
 expand_mode = 1
 stretch_mode = 5
@@ -413,8 +425,14 @@ polygon = PackedVector2Array(-110, 4, -38, 0, -32, 29, -107, 27)
 [node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=1878094766]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Back" unique_id=417546633]
-position = Vector2(671, 387)
-polygon = PackedVector2Array(-140, -115, -62, -100, -44, -60, 60, 46, 89, 130, 32, 139, 17, 43, -22, 153, -60, 159, -40, 72, -84, 72, -82, 164, -205, 182, -127, 23)
+position = Vector2(662, 386)
+polygon = PackedVector2Array(-140, -115, -65, -97, -15, -77, 60, 46, 89, 130, 32, 139, 54, 94, -3, 52, -39, 153, -85, 152, -40, 72, -97, 70, -93, 156, -205, 182, -127, 23)
+
+[node name="Mouth" type="Area2D" parent="Control/WolfCloseup/WolfTerritorial" unique_id=511706388]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfTerritorial/Mouth" unique_id=1353945362]
+position = Vector2(535, 429)
+polygon = PackedVector2Array(-99, -6, -52, -8, -58, 27, -93, 26)
 
 [node name="WolfHungry" type="TextureRect" parent="Control/WolfCloseup" unique_id=400246889]
 visible = false
@@ -423,42 +441,44 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 306.0
-offset_top = 178.0
-offset_right = -279.0
-offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("18_1u8w0")
+mouse_filter = 0
+texture = ExtResource("24_gngh3")
 expand_mode = 1
-stretch_mode = 4
+stretch_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="Tail" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=322342302]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Tail" unique_id=1604040344]
-position = Vector2(502, 88.99999)
-polygon = PackedVector2Array(-54, -4, 13, 97, 25, 185, -22, 197, -46, 143, -74, 101)
+position = Vector2(779, 282)
+polygon = PackedVector2Array(-54, -4, 13, 97, 27, 193, -13, 206, -32, 144, -48, 104)
 
 [node name="Head" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=55347387]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Head" unique_id=1630976833]
-position = Vector2(245, 52)
+position = Vector2(550, 250)
 scale = Vector2(2.0181446, 1)
-polygon = PackedVector2Array(-96.127884, 22, -42.117874, -21, -14.865112, -26, -16.351654, 83, -26.261734, 89, -95.13689, 86)
+polygon = PackedVector2Array(-88.199814, 25, -42.117874, -21, -14.865112, -26, -16.351654, 83, -26.261734, 89, -95.13689, 86)
 
 [node name="Eyes" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=342785007]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Eyes" unique_id=1449903008]
-position = Vector2(196, 150)
+position = Vector2(506, 344)
 polygon = PackedVector2Array(-118, -2, -38, 0, -32, 29, -119, 30)
 
 [node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=1040486996]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Back" unique_id=1122371194]
-position = Vector2(354, 169)
+position = Vector2(657, 367)
 polygon = PackedVector2Array(-111, -141, -20, -128, 65, -95, 37, -16, -133, 20)
+
+[node name="Mouth" type="Area2D" parent="Control/WolfCloseup/WolfHungry" unique_id=857616462]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfHungry/Mouth" unique_id=608962195]
+position = Vector2(509, 393)
+polygon = PackedVector2Array(-110, 4, -38, 0, -53, 42, -97, 36)
 
 [node name="WolfWounded" type="TextureRect" parent="Control/WolfCloseup" unique_id=1395285462]
 visible = false
@@ -467,47 +487,43 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 228.0
-offset_top = 160.0
-offset_right = -261.0
-offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("19_0odxb")
+mouse_filter = 0
+texture = ExtResource("25_0n3wm")
 expand_mode = 1
-stretch_mode = 4
+stretch_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="Leg" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=1549027016]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Leg" unique_id=289095252]
-position = Vector2(422.73517, 284.21298)
+position = Vector2(686, 457)
 polygon = PackedVector2Array(-31.735168, -126.21298, 56.26483, -107.21298, 17.264832, -23.212982, 52.26483, 21.787018, 19.264832, 104.78702, -32.73517, 111.78702, 1.2648315, 36.787018, -68.73517, -24.212982)
 
 [node name="Head" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=181528572]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Head" unique_id=1461098263]
-position = Vector2(187.05414, 146.9384)
+position = Vector2(489, 349)
 scale = Vector2(2.0181446, 1)
 polygon = PackedVector2Array(-36.694157, -16.938396, -1.0178261, -9.938396, 45.064083, -28.938396, 30.19897, 29.061604, -3.9908485, 7.0616035, -34.21665, 23.061604)
 
 [node name="Mouth" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=1905241146]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Mouth" unique_id=1840215235]
-position = Vector2(185.1761, 240.67296)
+position = Vector2(479, 424)
 polygon = PackedVector2Array(-39.1761, -26.672955, 31.823898, -22.672955, 32.8239, 21.327045, -18.176102, 32.32704)
 
 [node name="Back" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=2145363394]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Back" unique_id=1328268533]
-position = Vector2(348.46393, 81.526115)
-polygon = PackedVector2Array(-132.46393, -26.526115, -49.463936, -53.526115, 51.536064, -49.526115, 143.53607, 20.473885, 96.536064, 53.473885, -40.463936, 76.473885, -44.376595, 29.91343)
+position = Vector2(627, 297)
+polygon = PackedVector2Array(-132.46393, -26.526115, -49.463936, -53.526115, 51.536064, -49.526115, 120, 33, 44, 18, -40.463936, 76.473885, -44.376595, 29.91343)
 
 [node name="Tail" type="Area2D" parent="Control/WolfCloseup/WolfWounded" unique_id=629041718]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/WolfCloseup/WolfWounded/Tail" unique_id=213962083]
-position = Vector2(497.32867, 272.84503)
+position = Vector2(769, 447)
 polygon = PackedVector2Array(-0.32868195, -149.84502, 44.671318, -94.84502, 30.671318, 27.154984, -39.328682, 92.15498, -13.328682, 25.154984, -35.328682, 3.1549835)
 
 [node name="WindowBorder" type="TextureButton" parent="Control/WolfCloseup" unique_id=449652465]
