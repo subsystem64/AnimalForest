@@ -34,6 +34,8 @@ const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.
 		score = value
 		score_changed.emit(score)
 
+@export var current_act_score := 0
+
 @onready var outside_background: TextureRect = $Control/Outside/OutsideBackground
 @onready var phone = $Control/Desk/Phone
 @onready var blink_holder = $ActionCutscene/CanvasLayer/BlinkHolder
@@ -65,6 +67,7 @@ func advance_level() -> void:
 
 func do_act_transition(item_name: String) -> void:
 	var item_score := score_item_for_current_act(item_name)
+	current_act_score = item_score
 	outside_background.texture = MORNING_BACKGROUND
 
 	if phone.has_method("do_phone_call"):

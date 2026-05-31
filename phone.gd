@@ -2,6 +2,11 @@ extends TextureButton
 
 signal phone_call_ended
 
+const ACT_SCORE_RATINGS := {
+	1: "wrong",
+	2: "mediocre",
+	3: "good",
+}
 const PHONE_DIALOGUES := [
 	[],
 	# Act 1
@@ -71,7 +76,8 @@ const PHONE_DIALOGUES := [
 
 @onready var dialogue_box: Control = $"../../PhoneDialogue"
 @onready var dialogue_label: RichTextLabel = $"../../PhoneDialogue/DialogueLabel"
-
+@onready var main =  $"../../.."
+@onready var notebook = $"../../../OpenNotebook"
 var is_ringing := false
 var in_call := false
 var base_pos: Vector2
@@ -251,6 +257,7 @@ func end_call() -> void:
 		voicebox.stop()
 
 	slam_sound.play()
+	notebook.unlock_post_act_entry(main.act, ACT_SCORE_RATINGS[main.current_act_score])
 	phone_call_ended.emit()
 
 

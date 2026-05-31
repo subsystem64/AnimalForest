@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
@@ -127,8 +126,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_4k2k6")
-act = null
-score = null
 metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="." unique_id=1843364932]
@@ -913,6 +910,7 @@ offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true

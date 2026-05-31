@@ -29,46 +29,38 @@ var post_act_entries := {
 		},
 		"mediocre": {
 			"day": "Day 8",
-			"title": "After Act I",
 			"text": "Wolf was outside tonight. Circling - territorial thing, apparently, according to the field notes someone left here. I got it to back off. It left eventually.\n\nProbably fine. These things happen out here.\n\nStill. It was bigger than I expected."
 		},
 		"wrong": {
 			"day": "Day 8",
-			"title": "After Act I",
 			"text": "Wolf situation outside tonight. Handled it. Called it in to James, told him to make sure the crew knows to keep their distance.\n\nLast thing I need right now is wildlife disruptions with Phase 3 moving forward. I've got enough on my plate.\n\nAnyway. Early start tomorrow."
 		}
 	},
 	2: {
 		"correct": {
 			"day": "Day 9",
-			"title": "After Act II",
 			"text": "It came back. Same wolf, I'm almost certain - same size, same way of moving. This time it was watching me eat through the window. Just standing there in the dark.\n\nI left some food on the sill and moved back from the glass. It took almost twenty minutes, but it came up and took it. Kept its eyes on me the whole time.\n\nI didn't move.\n\nI keep thinking about the survey walk on Friday. The biologists said the planned route cuts through territory the pack has been using for years. I put that in my report as a note, but I didn't push it.\n\nNot sure what I would have pushed it toward anyway."
 		},
 		"mediocre": {
 			"day": "Day 9",
-			"title": "After Act II",
 			"text": "Wolf again tonight. Looked hungry - could see its ribs a little, which I wasn't expecting. Left some food out. It didn't come close enough to take it, but it hung around for a while.\n\nCalled it in. Someone will deal with it.\n\nThink I need to get more coffee filters. Also call Portland back about the northern access road."
 		},
 		"wrong": {
 			"day": "Day 9",
-			"title": "After Act II",
 			"text": "Wolf was back. Dealt with it. It's becoming a pattern which is going to be a problem if it keeps up - can't have wildlife hanging around the operational area, especially not with the crew due to arrive next week.\n\nI'll flag it in the morning report. Probably a habitat pressure thing from the survey zone. Which is all the more reason to get Phase 3 sorted quickly and get proper boundaries established.\n\nLong day. Bed."
 		}
 	},
 	3: {
 		"correct": {
 			"day": "Day 10",
-			"title": "After Act III",
 			"text": "I went outside.\n\nI know how that sounds. I'm not sure I can explain the reasoning in a way that holds up, because it doesn't really hold up - it was growling, it was hurt, those two things don't go together cleanly and I knew that going out there.\n\nBut I've seen it twice now. And the way it was standing - body turned away, not squared up - that's not how you stand if you're about to attack someone. I've read enough of those field notes to know that much.\n\nIt let me get close. It let me bandage up its leg.\n\nI have a meeting in the city tomorrow. Phase 3. I've been trying to figure out what I'm going to say since I got the call. I still don't know.\n\nI keep thinking: if I can read this, what else have I been not reading?"
 		},
 		"mediocre": {
 			"day": "Day 10",
-			"title": "After Act III",
 			"text": "Wolf came back tonight. Hurt this time - bad leg, not putting weight on it. I called wildlife services and they said they'd send someone in the morning.\n\nI watched it through the window for a while after I hung up. It didn't move much.\n\nMeeting in the city tomorrow. Phase 3 finalization. I should sleep.\n\nIf it's still there in the morning they can probably help it. Oh well..."
 		},
 		"wrong": {
 			"day": "Day 10",
-			"title": "After Act III",
 			"text": "Wolf showed up again tonight. Looked aggressive, maybe even rabid. I didn't go out.\n\nI've got the Phase 3 meeting tomorrow and I'm not going to jeopardise that or myself over this. Wildlife services can handle it if it becomes a problem.\n\nPacked up. Early start.\n\nI think I heard it outside for a while after I went to bed. Or maybe that was the wind. Hard to tell out here. I'm just hoping it leaves before I wake up."
 		}
 	}
@@ -156,10 +148,9 @@ func unlock_post_act_entry(act_number: int, result_type: String) -> void:
 
 	var entry = post_act_entries[act_number][result_type]
 
-	var formatted_entry := "[center]%s - %s[/center]\n\n%s" % [
-		entry["day"],
-		entry["title"],
-		entry["text"]
+	var formatted_entry := "[center]%s[/center]\n\n%s" % [
+	entry["day"],
+	entry["text"]
 	]
 
 	page_text.append(formatted_entry)
