@@ -78,6 +78,9 @@ const PHONE_DIALOGUES := [
 @onready var dialogue_label: RichTextLabel = $"../../PhoneDialogue/DialogueLabel"
 @onready var main =  $"../../.."
 @onready var notebook = $"../../../OpenNotebook"
+@onready var wolf_button = $"../../Outside/Wolf/WolfButton"
+
+
 var is_ringing := false
 var in_call := false
 var base_pos: Vector2
@@ -131,6 +134,8 @@ func start_ringing() -> void:
 
 func do_phone_call(call_act: int, item_score: int) -> bool:
 	dialogue_lines = _get_dialogue_lines(call_act, item_score)
+	wolf_button.disabled = true
+	wolf_button.mouse_default_cursor_shape = Control.CURSOR_ARROW
 
 	if dialogue_lines.is_empty():
 		return false
@@ -258,6 +263,8 @@ func end_call() -> void:
 
 	slam_sound.play()
 	notebook.unlock_post_act_entry(main.act, ACT_SCORE_RATINGS[main.current_act_score])
+	wolf_button.disabled = false
+	wolf_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	phone_call_ended.emit()
 
 

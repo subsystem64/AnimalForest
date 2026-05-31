@@ -703,9 +703,9 @@ vertical_alignment = 1
 [node name="YesButton" type="TextureButton" parent="Warning" unique_id=1888840494]
 z_index = 11
 layout_mode = 0
-offset_left = 425.0
+offset_left = 590.0
 offset_top = 404.0
-offset_right = 563.0
+offset_right = 728.0
 offset_bottom = 455.0
 mouse_default_cursor_shape = 2
 ignore_texture_size = true
@@ -715,10 +715,10 @@ metadata/_edit_lock_ = true
 [node name="NoButton" type="TextureButton" parent="Warning" unique_id=1483988345]
 z_index = 11
 layout_mode = 0
-offset_left = 590.0
-offset_top = 402.0
-offset_right = 728.0
-offset_bottom = 456.0
+offset_left = 425.0
+offset_top = 403.0
+offset_right = 563.0
+offset_bottom = 457.0
 mouse_default_cursor_shape = 2
 ignore_texture_size = true
 stretch_mode = 0
