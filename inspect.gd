@@ -1,6 +1,7 @@
 extends Control
 
 const MAGNIFYING_GLASS_OFFSET := Vector2(-30, -30)
+const SCRIBBLE_SOUND_VOLUME_DB := +12.0
 
 const ACT_NOTE_PAGES := {
 	1: 8,
@@ -47,6 +48,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	magnifying_glass.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	magnifying_glass.visible = false
+	scribble_sound.volume_db = SCRIBBLE_SOUND_VOLUME_DB
 
 	for child in find_children("*", "CollisionPolygon2D", true, false):
 		inspection_polygons.append(child as CollisionPolygon2D)

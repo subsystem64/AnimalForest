@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duv3qb455cyp" path="res://assets/TableAssets/Notepad.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dmieyt36lvmo8" path="res://assets/TableAssets/WoodenPost.png" id="9_getpj"]
 [ext_resource type="Script" uid="uid://85b666hnrda7" path="res://wolf.gd" id="9_wolf"]
-[ext_resource type="Script" path="res://animalia.gd" id="10_animalia"]
+[ext_resource type="Script" uid="uid://dsjunequly5ji" path="res://animalia.gd" id="10_animalia"]
 [ext_resource type="Script" uid="uid://ds5uaw0b3m0db" path="res://inspect.gd" id="10_inspect"]
 [ext_resource type="Texture2D" uid="uid://dab6vfp3sgc7p" path="res://assets/TableAssets/Rifle.png" id="10_ryguw"]
 [ext_resource type="Script" uid="uid://bh7rkry4ui4t5" path="res://notebook.gd" id="11_notebook"]
@@ -33,16 +33,17 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
-[ext_resource type="Texture2D" uid="uid://dfk4dkdvg1d4y" path="res://assets/WarningSign.png" id="31_uypp3"]
 [ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
 [ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
+[ext_resource type="FontFile" uid="uid://dd8uo7b162g5v" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.woff2" id="34_4w656"]
+[ext_resource type="Texture2D" uid="uid://c3cd5iblwgu56" path="res://assets/WarningBox.png" id="34_6iyjs"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
 [ext_resource type="Script" uid="uid://7a4hqadi5eir" path="res://blink.gd" id="35_4lmeg"]
 [ext_resource type="Texture2D" uid="uid://cxwwygprxsnwo" path="res://assets/BlinkAnimation/blink1.png" id="35_h8e4i"]
@@ -669,7 +670,6 @@ text = "score label (remove)
 script = ExtResource("28_0n3wm")
 
 [node name="Warning" type="Control" parent="." unique_id=1535746166]
-visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15
@@ -694,7 +694,8 @@ offset_bottom = 43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 27
+theme_override_fonts/normal_font = ExtResource("34_4w656")
+theme_override_font_sizes/normal_font_size = 38
 text = "Do you ant to use this item"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -702,24 +703,26 @@ vertical_alignment = 1
 [node name="YesButton" type="TextureButton" parent="Warning" unique_id=1888840494]
 z_index = 11
 layout_mode = 0
-offset_left = 424.0
+offset_left = 425.0
 offset_top = 404.0
-offset_right = 562.0
+offset_right = 563.0
 offset_bottom = 455.0
 mouse_default_cursor_shape = 2
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_lock_ = true
 
 [node name="NoButton" type="TextureButton" parent="Warning" unique_id=1483988345]
 z_index = 11
 layout_mode = 0
-offset_left = 591.0
-offset_top = 403.0
-offset_right = 729.0
-offset_bottom = 457.0
+offset_left = 590.0
+offset_top = 402.0
+offset_right = 728.0
+offset_bottom = 456.0
 mouse_default_cursor_shape = 2
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_lock_ = true
 
 [node name="WarningImage" type="TextureRect" parent="Warning" unique_id=1888104934]
 layout_mode = 1
@@ -735,7 +738,7 @@ offset_bottom = 199.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("31_uypp3")
+texture = ExtResource("34_6iyjs")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
