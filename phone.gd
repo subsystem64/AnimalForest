@@ -107,6 +107,7 @@ func _ready() -> void:
 
 	ring_lines.visible = false
 	dialogue_box.visible = false
+	voicebox.volume_db = -10
 
 
 func _process(delta: float) -> void:

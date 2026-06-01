@@ -1,7 +1,7 @@
 extends Control
 
 const MAGNIFYING_GLASS_OFFSET := Vector2(-30, -30)
-const SCRIBBLE_SOUND_VOLUME_DB := +12.0
+const SCRIBBLE_SOUND_VOLUME_DB := +24.0
 
 const ACT_NOTE_PAGES := {
 	1: 8,

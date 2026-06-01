@@ -10,8 +10,8 @@ const CLOSE_HITBOX_NAMES := [
 const WOLF_TERRITORIAL_NAME := "WolfTerritorial"
 const WOLF_HUNGRY_NAME := "WolfHungry"
 const WOLF_WOUNDED_NAME := "WolfWounded"
-const CRICKET_NIGHT_VOLUME_DB := -24.0
-const FOREST_DAWN_VOLUME_DB := -36.0
+const CRICKET_NIGHT_VOLUME_DB := -10.0
+const FOREST_DAWN_VOLUME_DB := -20.0
 
 @onready var wolf_button: Button = $WolfButton
 @onready var wolf_closeup: Control = $"../../WolfCloseup"
