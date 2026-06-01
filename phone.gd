@@ -5,7 +5,7 @@ signal phone_call_ended
 const ACT_SCORE_RATINGS := {
 	1: "wrong",
 	2: "mediocre",
-	3: "good",
+	3: "correct",
 }
 const PHONE_DIALOGUES := [
 	[],
@@ -67,6 +67,20 @@ const PHONE_DIALOGUES := [
 		],
 	],
 ]
+const ENDING_PHONE_DIALOGUES := {
+	"corporate": [
+		"[color=#cfa66a]Corporate Voicemail:[/color] Marcus, just wanted to say — good showing today. Phase 3 is a go. Performance review in the new year. We're glad to have you in the room.",
+		"[color=#9fb4d8]Marcus:[/color] ..."
+	],
+	"activist": [
+		"[color=#cfa66a]Dale:[/color] Heard you pushed back in there today. Didn't think you had it in you, Marcus. ...Good.",
+		"[color=#9fb4d8]Marcus:[/color] Keep the crew away from the northern corridor, Dale. We're rerouting."
+	],
+	"scientist": [
+		"[color=#cfa66a]Dr. Osei:[/color] I didn't expect to hear from you today. Are you sure?",
+		"[color=#9fb4d8]Marcus:[/color] I'm sure. I'll see you Monday."
+	]
+}
 
 @onready var ring_lines: TextureRect = $RingLines
 @onready var ring_sound: AudioStreamPlayer = $RingSound
@@ -273,3 +287,13 @@ func _strip_bbcode(text: String) -> String:
 	var regex := RegEx.new()
 	regex.compile("\\[.*?\\]")
 	return regex.sub(text, "", true)
+
+func do_ending_phone_call(ending_id: String) -> bool:
+	if not ENDING_PHONE_DIALOGUES.has(ending_id):
+		push_warning("Missing ending phone dialogue: %s" % ending_id)
+		return false
+
+	dialogue_lines = ENDING_PHONE_DIALOGUES[ending_id].duplicate()
+
+	start_ringing()
+	return true

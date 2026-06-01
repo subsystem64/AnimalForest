@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
 [ext_resource type="Script" uid="uid://d2mniou0adhsw" path="res://act_2_cutscene.gd" id="49_0cbny"]
 [ext_resource type="Script" uid="uid://dd6y0mecqi6tq" path="res://act_3_cutscene.gd" id="50_hrvbo"]
+[ext_resource type="Script" uid="uid://b1hb0gcuyi6c" path="res://epilogue_screen.gd" id="57_rnkwl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
 bg_color = Color(0.1882353, 0.15294118, 0.11764706, 1)
@@ -1115,3 +1116,48 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="EpilogueScreen" type="Control" parent="." unique_id=2050090497]
+visible = false
+z_index = 36
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("57_rnkwl")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="EpilogueScreen" unique_id=449589935]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="EpilogueText" type="RichTextLabel" parent="EpilogueScreen" unique_id=1282642480]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 87.0
+offset_top = 76.0
+offset_right = -89.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_fonts/bold_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
