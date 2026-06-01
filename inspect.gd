@@ -3,12 +3,6 @@ extends Control
 const MAGNIFYING_GLASS_OFFSET := Vector2(-30, -30)
 const SCRIBBLE_SOUND_VOLUME_DB := +24.0
 
-const ACT_NOTE_PAGES := {
-	1: 8,
-	2: 10,
-	3: 12,
-}
-
 const INSPECTION_MESSAGES := {
 	1: {
 		"Tail": "Tail straight up. Cooper was like that with other dogs… especially that yippity little chihuahua down the road.",
@@ -103,17 +97,11 @@ func _collect_hovered_inspection() -> void:
 	var note_area_name := note_area.name
 	var act_number: int = main.act
 
-	if not ACT_NOTE_PAGES.has(act_number):
-		push_warning("No note page set for act %d" % act_number)
-		return
-
-	var note_page: int = ACT_NOTE_PAGES[act_number]
-
 	var note_message := _get_note_message(act_number, note_area_name)
 
 	inspection_polygons.erase(hovered_polygon)
 	scribble_sound.play()
-	notebook.add_inspection_note(note_message, note_page)
+	notebook.add_inspection_note(note_message, act_number)
 	hide_magnifying_glass()
 
 

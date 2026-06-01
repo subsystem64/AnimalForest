@@ -9,6 +9,7 @@ extends Control
 var page := 1
 var inspection_notes: Array[String] = []
 var unlocked_post_acts: Array[String] = []
+var inspection_pages_by_act := {}
 
 var page_text := [
 	"Day 1 - Sunday\n\nGot in just before noon today. The cabin's in better shape than I expected after winter - a few things to sort out but nothing urgent. Set up the desk, got the laptop running, made coffee.\n\nSpent the afternoon going through the Q1 numbers and roughing out talking points for tomorrow's presentation. Earnings call is at nine, so I want to be sharp. Reminded myself three times to charge the laptop tonight. Writing it here so I actually do it.\n\nTo do tomorrow: 9am earnings call, follow up with Dale on crew schedules, check the router.",
@@ -113,11 +114,10 @@ func _update_page_counter() -> void:
 	next_button.disabled = page >= page_text.size()
 
 
-func add_inspection_note(note_message: String, note_page: int) -> void:
-	while page_text.size() < note_page:
-		page_text.append("")
+func add_inspection_note(note_message: String, act_number: int) -> void:
+	var note_page := _get_or_create_inspection_page(act_number)
 
-	var note_key := "%d:%s" % [note_page, note_message]
+	var note_key := "%d:%s" % [act_number, note_message]
 
 	if note_key in inspection_notes:
 		return
@@ -126,8 +126,22 @@ func add_inspection_note(note_message: String, note_page: int) -> void:
 
 	page_text[note_page - 1] += "\n• %s" % note_message
 
+	page = note_page
 	_update_page_counter()
+	
+func _get_or_create_inspection_page(act_number: int) -> int:
+	if inspection_pages_by_act.has(act_number):
+		return inspection_pages_by_act[act_number]
 
+	var day_number := 7 + act_number
+
+	var new_page_text := "[center]Day %d — Field Notes[/center]\n" % day_number
+	page_text.append(new_page_text)
+
+	var new_page_number := page_text.size()
+	inspection_pages_by_act[act_number] = new_page_number
+
+	return new_page_number
 func unlock_post_act_entry(act_number: int, result_type: String) -> void:
 	result_type = result_type.to_lower()
 
