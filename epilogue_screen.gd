@@ -2,6 +2,27 @@ extends Control
 
 signal epilogue_finished
 
+const ENDING_EPILOGUES := {
+	"corporate": "[center][b][color=#cfa66a]ENDING — CORPORATE[/color][/b][/center]\n\n" +
+	"Phase 3 approved. Cedar Ridge opens the following spring.\n\n" +
+	"Wolf pack W-7's tracking collar data goes silent in the summer.\n\n" +
+	"The pileated woodpecker nesting zones in Sector 7 are cleared in March.\n\n" +
+	"Marcus receives a commendation.",
+
+	"activist": "[center][b][color=#cfa66a]ENDING — ACTIVIST[/color][/b][/center]\n\n" +
+	"Phase 3 approved with modifications.\n\n" +
+	"Revenue projections revised downward. The wolf corridor stays open.\n\n" +
+	"Marcus stays. He sends a polite letter declining the Institute position.\n\n" +
+	"Dr. Osei replies: 'The door stays open.'",
+
+	"scientist": "[center][b][color=#cfa66a]ENDING — ANIMAL SCIENTIST[/color][/b][/center]\n\n" +
+	"Marcus joins the Cascade Wildlife Policy Institute.\n\n" +
+	"Two years later he helps draft the Pacific Northwest Timber Coexistence Standards. Four regional companies adopt them.\n\n" +
+	"Hartwell is not among them.\n\n" +
+	"Phase 3 was approved six weeks after his departure.\n\n" +
+	"Wolf pack W-7 was not seen in Sector 12 the following spring."
+}
+
 @onready var epilogue_text: RichTextLabel = $EpilogueText
 
 var full_text := ""
@@ -19,8 +40,12 @@ func _ready() -> void:
 	epilogue_text.visible_characters = 0
 
 
-func show_epilogue(text: String) -> void:
-	full_text = text
+func show_epilogue(ending_id: String) -> void:
+	if not ENDING_EPILOGUES.has(ending_id):
+		push_warning("Missing epilogue for ending: %s" % ending_id)
+		return
+
+	full_text = ENDING_EPILOGUES[ending_id]
 	visible_characters = 0
 	type_timer = 0.0
 	is_typing = true
