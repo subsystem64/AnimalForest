@@ -1119,6 +1119,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="EpilogueScreen" type="Control" parent="." unique_id=2050090497]
 visible = false
@@ -1182,17 +1183,15 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("32_qnost")
 ignore_texture_size = true
 stretch_mode = 4
-metadata/_edit_lock_ = true
 
 [node name="OfferLetter" type="TextureButton" parent="FinalDecision" unique_id=269563916]
 layout_mode = 0
-offset_left = 476.0
-offset_top = 395.0
-offset_right = 658.0
-offset_bottom = 572.0
+offset_left = 653.0
+offset_top = 350.0
+offset_right = 835.0
+offset_bottom = 527.0
 pivot_offset = Vector2(91, 85)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("59_uit24")
 ignore_texture_size = true
 stretch_mode = 4
-metadata/_edit_lock_ = true
