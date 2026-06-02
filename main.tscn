@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]

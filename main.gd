@@ -61,6 +61,7 @@ const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.
 @onready var phone = $Control/Desk/Phone
 @onready var blink_holder = $ActionCutscene/CanvasLayer/BlinkHolder
 @onready var epilogue_screen = $EpilogueScreen
+@onready var shelf = $Control/Shelf
 
 
 func _ready() -> void:
@@ -73,6 +74,8 @@ func _process(delta: float) -> void:
 
 func advance_level() -> void:
 	act = act + 1
+
+	shelf.clear_selected_item()
 	
 	if act == 2:
 		$Act2Cutscene.start_act2_cutscene()
