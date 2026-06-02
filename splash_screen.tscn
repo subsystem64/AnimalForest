@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dclv2iybpbv4b" path="res://splash_screen.gd" id="1_el3v4"]
 [ext_resource type="Texture2D" uid="uid://44lduxtecaes" path="res://assets/Environment/SplashScreen.png" id="2_arguk"]
+[ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="3_arguk"]
 
 [node name="SplashScreen" type="Control" unique_id=796775622]
 layout_mode = 3
@@ -22,3 +23,23 @@ grow_vertical = 2
 texture = ExtResource("2_arguk")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="PressAnyKey" type="Label" parent="." unique_id=986194397]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -96.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9882353, 0.91764706, 0.6392157, 1)
+theme_override_colors/font_shadow_color = Color(0.3254902, 0.21568628, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("3_arguk")
+theme_override_font_sizes/font_size = 36
+text = "Press Any Key"
+horizontal_alignment = 1
+vertical_alignment = 1
