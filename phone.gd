@@ -93,7 +93,8 @@ const ENDING_PHONE_DIALOGUES := {
 @onready var main =  $"../../.."
 @onready var notebook = $"../../../OpenNotebook"
 @onready var wolf_button = $"../../Outside/Wolf/WolfButton"
-
+@onready var animalia_button = $"../Animalia"
+@onready var notepad_button = $"../Notepad"
 
 var is_ringing := false
 var in_call := false
@@ -193,6 +194,10 @@ func _on_pressed() -> void:
 
 func pick_up_phone() -> void:
 	stop_ringing()
+	
+	animalia_button.disabled=true
+	notepad_button.disabled=true
+	
 
 	in_call = true
 	dialogue_index = 0
@@ -270,6 +275,9 @@ func end_call() -> void:
 	is_typing = false
 
 	dialogue_box.visible = false
+	
+	animalia_button.disabled=false
+	notepad_button.disabled=false
 
 	if voicebox.has_method("stop_voice"):
 		voicebox.stop_voice()
