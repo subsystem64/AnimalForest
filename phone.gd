@@ -14,12 +14,12 @@ const PHONE_DIALOGUES := [
 		[],
 		# Score 1
 		[
-			"[color=#cfa66a]James:[/color] Wolf was acting strange last night, sir — kept circling where you left that food out. Something's got it confused.",
+			"[color=#cfa66a]James:[/color] Morning sir. Crew found signs outside the cabin. Looks like the wolf changed course after what happened last night. Something's got it confused.",
 			"[color=#9fb4d8]Marcus:[/color] Scare them away if they come close. I will not have wolves disrupting the site.",
 		],
 		# Score 2
 		[
-			"[color=#cfa66a]James:[/color] Heard you scared off the wolf last night. Some of the crew are on edge about it.",
+			"[color=#cfa66a]James:[/color] Whatever you did last night, it backed the wolf off. But the crew says it did not seem gone, some of them are on edge about it.",
 			"[color=#9fb4d8]Marcus:[/color] Noted. Keep working. It'll sort itself out.",
 		],
 		# Score 3

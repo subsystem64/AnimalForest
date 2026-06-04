@@ -34,15 +34,13 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
-[ext_resource type="Texture2D" uid="uid://cdxw0etnptqgb" path="res://assets/wolf_water_dev.jpeg" id="32_htxhm"]
 [ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
-[ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
 [ext_resource type="FontFile" uid="uid://dd8uo7b162g5v" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.woff2" id="34_4w656"]
 [ext_resource type="Texture2D" uid="uid://c3cd5iblwgu56" path="res://assets/WarningBox.png" id="34_6iyjs"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
@@ -54,14 +52,43 @@
 [ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
 [ext_resource type="Texture2D" uid="uid://374xji87hiv7" path="res://assets/BlinkAnimation/blink5.png" id="39_gngh3"]
 [ext_resource type="Texture2D" uid="uid://di368vvoklxr7" path="res://assets/BlinkAnimation/blink6.png" id="40_0n3wm"]
+[ext_resource type="Texture2D" uid="uid://dh0f5u3lagrw6" path="res://assets/TerritorialWolfReact/MugAction.png" id="42_ruth0"]
+[ext_resource type="Texture2D" uid="uid://c0d4rg7p216y" path="res://assets/TerritorialWolfReact/WaterAction.png" id="43_uatky"]
+[ext_resource type="Texture2D" uid="uid://ck1wci25ysfue" path="res://assets/TerritorialWolfReact/FoodAction.png" id="44_rqtf5"]
+[ext_resource type="Texture2D" uid="uid://bepyqpjsxrbv7" path="res://assets/TerritorialWolfReact/Shot.png" id="45_1vm84"]
+[ext_resource type="Texture2D" uid="uid://bge8wdva4d6y1" path="res://assets/TerritorialWolfReact/PhoneAction.png" id="46_wu3dr"]
+[ext_resource type="Texture2D" uid="uid://drlohjqjbl3v8" path="res://assets/TerritorialWolfReact/TarpAction.png" id="47_cyx1q"]
+[ext_resource type="Texture2D" uid="uid://chcwn6q0404h7" path="res://assets/TerritorialWolfReact/RopeAction.png" id="48_0dhbp"]
 [ext_resource type="Script" uid="uid://d2mniou0adhsw" path="res://act_2_cutscene.gd" id="49_0cbny"]
+[ext_resource type="Texture2D" uid="uid://dxnhpya7q2c7x" path="res://assets/TerritorialWolfReact/AidAction.png" id="49_jx0wj"]
 [ext_resource type="Script" uid="uid://dd6y0mecqi6tq" path="res://act_3_cutscene.gd" id="50_hrvbo"]
+[ext_resource type="Texture2D" uid="uid://c53n2upx2nip6" path="res://assets/TerritorialWolfReact/FenceAction.png" id="50_kkkcx"]
+[ext_resource type="Texture2D" uid="uid://cp6tagr6kcguv" path="res://assets/HungryWolfReact/WaterAction.png" id="51_1yv1y"]
+[ext_resource type="Texture2D" uid="uid://bq5wbbawnqa1d" path="res://assets/HungryWolfReact/TranqAction.png" id="52_5yh34"]
+[ext_resource type="Texture2D" uid="uid://dsfkh3ofi7ywt" path="res://assets/HungryWolfReact/FoodAction.png" id="53_pjuso"]
+[ext_resource type="Texture2D" uid="uid://bfl8os1ttpx3y" path="res://assets/HungryWolfReact/MugActionPhoneAction.png" id="54_23xmf"]
+[ext_resource type="Texture2D" uid="uid://dng1r0jph5sm" path="res://assets/HungryWolfReact/RifleAction.png" id="55_swlj1"]
+[ext_resource type="Texture2D" uid="uid://byss01p1whlsr" path="res://assets/HungryWolfReact/TarpAction.png" id="56_yysqy"]
+[ext_resource type="Texture2D" uid="uid://bq0olh7hh3x2b" path="res://assets/HungryWolfReact/RopeAction.png" id="57_n5t1e"]
 [ext_resource type="Script" uid="uid://b1hb0gcuyi6c" path="res://epilogue_screen.gd" id="57_rnkwl"]
+[ext_resource type="Texture2D" uid="uid://6q3akjkoemit" path="res://assets/HungryWolfReact/AidAction.png" id="58_h6isl"]
 [ext_resource type="Script" uid="uid://dh6sxbdngrqv0" path="res://final_decision.gd" id="58_vke2r"]
 [ext_resource type="Texture2D" uid="uid://cp14j5xtypywl" path="res://assets/laptop.png" id="59_rm4vd"]
 [ext_resource type="Texture2D" uid="uid://mpfteo1cja6u" path="res://assets/email popup.png" id="60_email"]
 [ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="61_rm4vd"]
 [ext_resource type="Texture2D" uid="uid://kml8bmh1sjsi" path="res://assets/gmail.png" id="62_pjyto"]
+[ext_resource type="Texture2D" uid="uid://cd12u3edvkixj" path="res://assets/HungryWolfReact/FenceAction.png" id="59_53bls"]
+[ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="59_uit24"]
+[ext_resource type="Texture2D" uid="uid://dhas0xx1mvwv6" path="res://assets/WoundedWolfReact/WaterAction.png" id="60_lwnsi"]
+[ext_resource type="Texture2D" uid="uid://ktk5vt106dar" path="res://assets/WoundedWolfReact/TranqAction.png" id="61_41lik"]
+[ext_resource type="Texture2D" uid="uid://dfyh67hkeccdw" path="res://assets/WoundedWolfReact/FoodAction.png" id="62_jbvwl"]
+[ext_resource type="Texture2D" uid="uid://cv7gkkwi8i4xy" path="res://assets/WoundedWolfReact/MugAction.png" id="63_sn1fb"]
+[ext_resource type="Texture2D" uid="uid://5g0am87g8g5f" path="res://assets/WoundedWolfReact/PhoneAction.png" id="64_yvsr8"]
+[ext_resource type="Texture2D" uid="uid://dnrhidh84kqim" path="res://assets/WoundedWolfReact/RifleAction.png" id="65_vieuh"]
+[ext_resource type="Texture2D" uid="uid://cnjvkl3gdry81" path="res://assets/WoundedWolfReact/TarpAction.png" id="66_yjja3"]
+[ext_resource type="Texture2D" uid="uid://basjdcho1cdjc" path="res://assets/WoundedWolfReact/RopeAction.png" id="67_l0gw7"]
+[ext_resource type="Texture2D" uid="uid://c3jx0vjmq8oqr" path="res://assets/WoundedWolfReact/AidAction.png" id="68_inymm"]
+[ext_resource type="Texture2D" uid="uid://bo7y2ja1escni" path="res://assets/WoundedWolfReact/FenceAction.png" id="69_jcxqu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
 bg_color = Color(0.1882353, 0.15294118, 0.11764706, 1)
@@ -1039,41 +1066,553 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="ActionCutscene" type="Control" parent="." unique_id=1975638807]
-visible = false
 z_index = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 83.55554
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_cutscene")
 
-[node name="WaterAction" type="TextureRect" parent="ActionCutscene" unique_id=1942635929]
-visible = false
+[node name="Act1WaterAction" type="TextureRect" parent="ActionCutscene" unique_id=1942635929]
 z_index = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.111084
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture = ExtResource("32_htxhm")
+texture = ExtResource("43_uatky")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="FoodAction" type="TextureRect" parent="ActionCutscene" unique_id=875840346]
+[node name="Act1DartAction" type="TextureRect" parent="ActionCutscene" unique_id=1765094482]
 visible = false
 z_index = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture = ExtResource("33_jq2sk")
+texture = ExtResource("45_1vm84")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1FoodAction" type="TextureRect" parent="ActionCutscene" unique_id=875840346]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("44_rqtf5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1MugAction" type="TextureRect" parent="ActionCutscene" unique_id=269099866]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("42_ruth0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1PhoneAction" type="TextureRect" parent="ActionCutscene" unique_id=446687513]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("46_wu3dr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1RifleAction" type="TextureRect" parent="ActionCutscene" unique_id=1316310659]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("45_1vm84")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1BedrollAction" type="TextureRect" parent="ActionCutscene" unique_id=1232394123]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("47_cyx1q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1RopeAction" type="TextureRect" parent="ActionCutscene" unique_id=882050352]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("48_0dhbp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1FirstAidKitAction" type="TextureRect" parent="ActionCutscene" unique_id=159521857]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("49_jx0wj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act1WoodenPostAction" type="TextureRect" parent="ActionCutscene" unique_id=1036454082]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("50_kkkcx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2WaterAction2" type="TextureRect" parent="ActionCutscene" unique_id=1213309956]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("51_1yv1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2DartAction2" type="TextureRect" parent="ActionCutscene" unique_id=1103068795]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("52_5yh34")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2FoodAction2" type="TextureRect" parent="ActionCutscene" unique_id=1421170312]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("53_pjuso")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2MugAction2" type="TextureRect" parent="ActionCutscene" unique_id=1541759747]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("54_23xmf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2PhoneAction2" type="TextureRect" parent="ActionCutscene" unique_id=135481575]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("54_23xmf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2RifleAction2" type="TextureRect" parent="ActionCutscene" unique_id=1291032226]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("55_swlj1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2BedrollAction2" type="TextureRect" parent="ActionCutscene" unique_id=153618054]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("56_yysqy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2RopeAction2" type="TextureRect" parent="ActionCutscene" unique_id=1726446318]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("57_n5t1e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2FirstAidKitAction2" type="TextureRect" parent="ActionCutscene" unique_id=1425062661]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("58_h6isl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act2WoodenPostAction2" type="TextureRect" parent="ActionCutscene" unique_id=156003048]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("59_53bls")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3WaterAction3" type="TextureRect" parent="ActionCutscene" unique_id=676262005]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("60_lwnsi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3DartAction3" type="TextureRect" parent="ActionCutscene" unique_id=437216166]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("61_41lik")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3FoodAction3" type="TextureRect" parent="ActionCutscene" unique_id=2061590607]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("62_jbvwl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3MugAction3" type="TextureRect" parent="ActionCutscene" unique_id=864325372]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("63_sn1fb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3PhoneAction3" type="TextureRect" parent="ActionCutscene" unique_id=467754484]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("64_yvsr8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3RifleAction3" type="TextureRect" parent="ActionCutscene" unique_id=118882379]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("65_vieuh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3BedrollAction3" type="TextureRect" parent="ActionCutscene" unique_id=428823704]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("66_yjja3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3RopeAction3" type="TextureRect" parent="ActionCutscene" unique_id=1171561072]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("67_l0gw7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3FirstAidKitAction3" type="TextureRect" parent="ActionCutscene" unique_id=1243756159]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("68_inymm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act3WoodenPostAction3" type="TextureRect" parent="ActionCutscene" unique_id=1015694812]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -5.0
+offset_right = 10.044434
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("69_jcxqu")
 expand_mode = 1
 stretch_mode = 5
 
