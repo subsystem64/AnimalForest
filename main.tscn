@@ -34,13 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
 [ext_resource type="FontFile" uid="uid://dd8uo7b162g5v" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.woff2" id="34_4w656"]
 [ext_resource type="Texture2D" uid="uid://c3cd5iblwgu56" path="res://assets/WarningBox.png" id="34_6iyjs"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
@@ -73,15 +74,13 @@
 [ext_resource type="Script" uid="uid://b1hb0gcuyi6c" path="res://epilogue_screen.gd" id="57_rnkwl"]
 [ext_resource type="Texture2D" uid="uid://6q3akjkoemit" path="res://assets/HungryWolfReact/AidAction.png" id="58_h6isl"]
 [ext_resource type="Script" uid="uid://dh6sxbdngrqv0" path="res://final_decision.gd" id="58_vke2r"]
-[ext_resource type="Texture2D" uid="uid://cp14j5xtypywl" path="res://assets/laptop.png" id="59_rm4vd"]
-[ext_resource type="Texture2D" uid="uid://mpfteo1cja6u" path="res://assets/email popup.png" id="60_email"]
-[ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="61_rm4vd"]
-[ext_resource type="Texture2D" uid="uid://kml8bmh1sjsi" path="res://assets/gmail.png" id="62_pjyto"]
 [ext_resource type="Texture2D" uid="uid://cd12u3edvkixj" path="res://assets/HungryWolfReact/FenceAction.png" id="59_53bls"]
+[ext_resource type="Texture2D" uid="uid://cp14j5xtypywl" path="res://assets/laptop.png" id="59_rm4vd"]
 [ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="59_uit24"]
 [ext_resource type="Texture2D" uid="uid://dhas0xx1mvwv6" path="res://assets/WoundedWolfReact/WaterAction.png" id="60_lwnsi"]
 [ext_resource type="Texture2D" uid="uid://ktk5vt106dar" path="res://assets/WoundedWolfReact/TranqAction.png" id="61_41lik"]
 [ext_resource type="Texture2D" uid="uid://dfyh67hkeccdw" path="res://assets/WoundedWolfReact/FoodAction.png" id="62_jbvwl"]
+[ext_resource type="Texture2D" uid="uid://kml8bmh1sjsi" path="res://assets/gmail.png" id="62_pjyto"]
 [ext_resource type="Texture2D" uid="uid://cv7gkkwi8i4xy" path="res://assets/WoundedWolfReact/MugAction.png" id="63_sn1fb"]
 [ext_resource type="Texture2D" uid="uid://5g0am87g8g5f" path="res://assets/WoundedWolfReact/PhoneAction.png" id="64_yvsr8"]
 [ext_resource type="Texture2D" uid="uid://dnrhidh84kqim" path="res://assets/WoundedWolfReact/RifleAction.png" id="65_vieuh"]
@@ -1066,6 +1065,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="ActionCutscene" type="Control" parent="." unique_id=1975638807]
+visible = false
 z_index = 4
 layout_mode = 1
 anchors_preset = 15
@@ -1078,6 +1078,7 @@ grow_vertical = 2
 script = ExtResource("13_cutscene")
 
 [node name="Act1WaterAction" type="TextureRect" parent="ActionCutscene" unique_id=1942635929]
+visible = false
 z_index = 4
 layout_mode = 1
 anchors_preset = 15
@@ -1757,13 +1758,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("60_email")
+texture = ExtResource("62_pjyto")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="Draft1" type="Control" parent="FinalDecision/EmailPopup" unique_id=1971978744]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1780,7 +1780,7 @@ offset_top = 99.0
 offset_right = 526.0
 offset_bottom = 190.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("61_rm4vd")
+texture_normal = ExtResource("59_uit24")
 ignore_texture_size = true
 stretch_mode = 4
 metadata/_edit_lock_ = true
@@ -1893,7 +1893,7 @@ offset_top = 187.0
 offset_right = 525.0
 offset_bottom = 278.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("61_rm4vd")
+texture_normal = ExtResource("59_uit24")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -2003,7 +2003,7 @@ offset_top = 295.0
 offset_right = 527.0
 offset_bottom = 386.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("61_rm4vd")
+texture_normal = ExtResource("59_uit24")
 ignore_texture_size = true
 stretch_mode = 4
 
