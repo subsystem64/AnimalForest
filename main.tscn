@@ -34,13 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
 [ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://b7eona5upjjcm" path="res://assets/50-507919_red-arrow-pointing-down-taza-con-corazon.png" id="33_h6isl"]
 [ext_resource type="FontFile" uid="uid://dd8uo7b162g5v" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.woff2" id="34_4w656"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
 [ext_resource type="Script" uid="uid://7a4hqadi5eir" path="res://blink.gd" id="35_4lmeg"]
@@ -629,6 +630,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 73.0
 grow_horizontal = 2
+mouse_default_cursor_shape = 2
 flat = true
 metadata/_edit_lock_ = true
 
@@ -641,6 +643,7 @@ anchor_bottom = 1.0
 offset_top = -70.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 flat = true
 metadata/_edit_lock_ = true
 
@@ -650,6 +653,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 78.0
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 flat = true
 metadata/_edit_lock_ = true
 
@@ -662,11 +666,30 @@ anchor_bottom = 1.0
 offset_left = -79.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 flat = true
 metadata/_edit_lock_ = true
 
 [node name="ScribbleSound" type="AudioStreamPlayer" parent="Control/WolfCloseup" unique_id=1141845784]
 stream = ExtResource("28_seu75")
+
+[node name="Arrow" type="TextureRect" parent="Control/WolfCloseup" unique_id=144870095]
+z_index = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.5
+offset_top = -66.0
+offset_right = 24.5
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("33_h6isl")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="HoverLabel" type="Label" parent="Control" unique_id=176369045]
 visible = false
