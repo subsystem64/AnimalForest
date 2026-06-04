@@ -26,9 +26,11 @@ const INBOX_3 := preload("res://assets/Computer/inbox_screen3.png")
 @onready var draft_3_close_button = $EmailPopup/Draft3Open/Draft3CloseButton
 @onready var send_3_button = $EmailPopup/Draft3Open/Send3Button
 @onready var inbox = $EmailPopup/Inbox
+@onready var laptop_screen = $Laptop/LaptopScreen
 @onready var exit_button = $EmailPopup/ExitButton
 @onready var main = $".."
-@onready var blink_holder = $CanvasLayer/BlinkHolder
+@onready var blink_holder = $"../ActionCutscene/CanvasLayer/BlinkHolder"
+@onready var swoosh_sound: AudioStreamPlayer = $"SwooshSound"
 
 
 
@@ -70,10 +72,8 @@ func _on_draft_close_button_pressed(draft_open: Control) -> void:
 
 func _on_send_button_pressed(ending_id: String) -> void:
 	disable_final_decision()
-	
+	swoosh_sound.play()
 	await blink_holder.play_close()
-
-	
 	await blink_holder.play_open()
 	
 	if phone.has_method("do_ending_phone_call"):
@@ -107,10 +107,13 @@ func play_ending_sequence(score: int) -> void:
 	
 	if score >= 9:
 		inbox.texture = INBOX_3
+		laptop_screen.texture = INBOX_3
 	elif score >= 6:
 		inbox.texture = INBOX_2
+		laptop_screen.texture = INBOX_2
 	else:
 		inbox.texture = INBOX_1
+		laptop_screen.texture = INBOX_1
 
 	show()
 

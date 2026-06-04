@@ -85,11 +85,12 @@
 [ext_resource type="Texture2D" uid="uid://basjdcho1cdjc" path="res://assets/WoundedWolfReact/RopeAction.png" id="67_l0gw7"]
 [ext_resource type="Texture2D" uid="uid://c3jx0vjmq8oqr" path="res://assets/WoundedWolfReact/AidAction.png" id="68_inymm"]
 [ext_resource type="Texture2D" uid="uid://bo7y2ja1escni" path="res://assets/WoundedWolfReact/FenceAction.png" id="69_jcxqu"]
-[ext_resource type="Texture2D" uid="uid://drtmq565wtvxw" path="res://assets/Environment/window_background.png" id="86_yysqy"]
 [ext_resource type="Texture2D" uid="uid://cpdqvfiqh4vvx" path="res://assets/Computer/pc_frame.png" id="87_yysqy"]
 [ext_resource type="Texture2D" uid="uid://bormldvqk2ghw" path="res://assets/Computer/inbox_screen1.png" id="88_swlj1"]
 [ext_resource type="Texture2D" uid="uid://di4hel8lxasc2" path="res://assets/Computer/email_screen.png" id="90_h6isl"]
 [ext_resource type="Texture2D" uid="uid://dc6ihow2an1he" path="res://assets/Computer/send_button.png" id="90_yysqy"]
+[ext_resource type="AudioStream" uid="uid://dmreu641t5lea" path="res://assets/Sound/universfield-swoosh-028-487856.mp3" id="91_n5t1e"]
+[ext_resource type="AudioStream" uid="uid://crrvqvagcbkf5" path="res://assets/Sound/restfuldreamingtunes-sounds-of-nature-the-sound-of-a-flame-burning-in-a-fireplace-273945.mp3" id="92_h6isl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
 bg_color = Color(0.1882353, 0.15294118, 0.11764706, 1)
@@ -1738,12 +1739,12 @@ metadata/_edit_lock_ = true
 [node name="LaptopScreen" type="TextureRect" parent="FinalDecision/Laptop" unique_id=257769595]
 z_index = -1
 layout_mode = 0
-offset_left = 56.0
-offset_top = 16.0
-offset_right = 231.0
+offset_left = 58.0
+offset_top = 20.0
+offset_right = 227.0
 offset_bottom = 117.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("86_yysqy")
+texture = ExtResource("88_swlj1")
 expand_mode = 1
 
 [node name="EmailPopup" type="Control" parent="FinalDecision" unique_id=1389825809]
@@ -2144,3 +2145,9 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("90_yysqy")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="SwooshSound" type="AudioStreamPlayer" parent="FinalDecision" unique_id=1025274181]
+stream = ExtResource("91_n5t1e")
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=2110145557]
+stream = ExtResource("92_h6isl")

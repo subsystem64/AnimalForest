@@ -41,10 +41,12 @@ const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.
 @onready var blink_holder = $ActionCutscene/CanvasLayer/BlinkHolder
 @onready var final_decision = $FinalDecision
 @onready var shelf = $Control/Shelf
+@onready var ambient_sound: AudioStreamPlayer = $AmbientSound
 
 
 func _ready() -> void:
 	$Act1Cutscene.start_act1_cutscene()
+	# ambient_sound.play()
 
 
 func _process(delta: float) -> void:
