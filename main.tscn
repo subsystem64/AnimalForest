@@ -58,7 +58,9 @@
 [ext_resource type="Script" uid="uid://dd6y0mecqi6tq" path="res://act_3_cutscene.gd" id="50_hrvbo"]
 [ext_resource type="Script" uid="uid://b1hb0gcuyi6c" path="res://epilogue_screen.gd" id="57_rnkwl"]
 [ext_resource type="Script" uid="uid://dh6sxbdngrqv0" path="res://final_decision.gd" id="58_vke2r"]
-[ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="59_uit24"]
+[ext_resource type="Texture2D" uid="uid://cp14j5xtypywl" path="res://assets/laptop.png" id="59_rm4vd"]
+[ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="61_rm4vd"]
+[ext_resource type="Texture2D" uid="uid://kml8bmh1sjsi" path="res://assets/gmail.png" id="62_pjyto"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
 bg_color = Color(0.1882353, 0.15294118, 0.11764706, 1)
@@ -1167,31 +1169,386 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="FinalDecision" type="Control" parent="." unique_id=822301147]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("58_vke2r")
 
-[node name="Phase3" type="TextureButton" parent="FinalDecision" unique_id=1270157427]
+[node name="Laptop" type="TextureButton" parent="FinalDecision" unique_id=269563916]
 layout_mode = 0
-offset_left = 476.0
-offset_top = 395.0
-offset_right = 658.0
-offset_bottom = 572.0
+offset_left = 765.0
+offset_top = 411.0
+offset_right = 947.0
+offset_bottom = 588.0
 pivot_offset = Vector2(91, 85)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("32_qnost")
+texture_normal = ExtResource("59_rm4vd")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="OfferLetter" type="TextureButton" parent="FinalDecision" unique_id=269563916]
+[node name="LaptopScreen" type="TextureRect" parent="FinalDecision/Laptop" unique_id=257769595]
+z_index = -1
 layout_mode = 0
-offset_left = 653.0
-offset_top = 350.0
-offset_right = 835.0
-offset_bottom = 527.0
-pivot_offset = Vector2(91, 85)
+offset_left = 35.0
+offset_top = 10.0
+offset_right = 145.0
+offset_bottom = 73.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("59_uit24")
+texture = ExtResource("33_jq2sk")
+expand_mode = 1
+
+[node name="EmailPopup" type="Control" parent="FinalDecision" unique_id=1389825809]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=1155065536]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Draft1" type="Control" parent="FinalDecision/EmailPopup" unique_id=1971978744]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Draft1Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1" unique_id=1529767913]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 99.0
+offset_right = 526.0
+offset_bottom = 190.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("61_rm4vd")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="Draft1Open" type="TextureRect" parent="FinalDecision/EmailPopup/Draft1" unique_id=1892890247]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("62_pjyto")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Draft1CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=2110583530]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 6.0
+offset_right = 1140.0
+offset_bottom = 46.0
+mouse_default_cursor_shape = 2
+
+[node name="Draft1Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=340474283]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 70.0
+offset_right = -15.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Draft1Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=1492868546]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.0
+offset_top = 92.0
+offset_right = -490.0
+offset_bottom = -529.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "kill the wolves"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Draft1Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=1862553836]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 46.0
+offset_right = -540.0
+offset_bottom = -569.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "my boss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Send1Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=1959366321]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 597.0
+offset_right = 219.0
+offset_bottom = 637.0
+mouse_default_cursor_shape = 2
+
+[node name="Draft2" type="Control" parent="FinalDecision/EmailPopup" unique_id=145724733]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Draft2Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2" unique_id=2096024351]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 187.0
+offset_right = 525.0
+offset_bottom = 278.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("61_rm4vd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Draft2Open" type="TextureRect" parent="FinalDecision/EmailPopup/Draft2" unique_id=1309029128]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("33_jq2sk")
+
+[node name="Draft2CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=1960658079]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 6.0
+offset_right = 1140.0
+offset_bottom = 46.0
+mouse_default_cursor_shape = 2
+
+[node name="Draft2Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=1327510301]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 70.0
+offset_right = -15.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Draft2Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=800599091]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.0
+offset_top = 92.0
+offset_right = -490.0
+offset_bottom = -529.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "kill the wolves"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Draft2Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=1169951782]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 46.0
+offset_right = -540.0
+offset_bottom = -569.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "my boss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Send2Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=525731229]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 597.0
+offset_right = 219.0
+offset_bottom = 637.0
+mouse_default_cursor_shape = 2
+
+[node name="Draft3" type="Control" parent="FinalDecision/EmailPopup" unique_id=1389381312]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Draft3Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3" unique_id=990400641]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 295.0
+offset_right = 527.0
+offset_bottom = 386.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("61_rm4vd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Draft3Open" type="TextureRect" parent="FinalDecision/EmailPopup/Draft3" unique_id=1127821649]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Draft3CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=353183626]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 6.0
+offset_right = 1140.0
+offset_bottom = 46.0
+mouse_default_cursor_shape = 2
+
+[node name="Draft3Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=2094438029]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 70.0
+offset_right = -15.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Draft3Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=310883975]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.0
+offset_top = 92.0
+offset_right = -490.0
+offset_bottom = -529.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "kill the wolves"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Draft3Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=2083547546]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 46.0
+offset_right = -540.0
+offset_bottom = -569.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "my boss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Send3Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=1398842480]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 597.0
+offset_right = 219.0
+offset_bottom = 637.0
+mouse_default_cursor_shape = 2
