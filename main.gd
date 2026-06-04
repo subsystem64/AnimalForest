@@ -13,6 +13,7 @@ const ITEM_ACT_SCORES := {
 	"FirstAidKit": [1, 1, 3],
 	"WoodenPost":  [2, 1, 2],
 	"Phone": 	   [2, 2, 2],
+	"Rope": 		   [1, 1, 1],
 }
 
 const MORNING_BACKGROUND := preload("res://assets/Environment/MorningBackground.png")
