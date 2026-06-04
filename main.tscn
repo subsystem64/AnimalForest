@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://shs22sq4jjyp" path="res://assets/WoundedWolf/WoundedWolfThemed.png" id="25_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://c65xeet1rc1yk" path="res://assets/Sound/night_forest_with_crickets.mp3" id="25_uypp3"]
 [ext_resource type="AudioStream" uid="uid://cvrto5pqu6nfs" path="res://assets/Sound/audiopapkin-forest-ambience-296528.mp3" id="27_blkrb"]
-[ext_resource type="Script" uid="uid://bxroujoq05pyi" path="res://score_label.gd" id="28_0n3wm"]
+[ext_resource type="Script" path="res://score_label.gd" id="28_0n3wm"]
 [ext_resource type="AudioStream" uid="uid://k3k2g2p7wxwj" path="res://assets/Sound/ScribbleSound.mp3" id="28_seu75"]
 [ext_resource type="FontFile" uid="uid://bxnu7v4ka4ymr" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.ttf" id="29_uypp3"]
 [ext_resource type="Texture2D" uid="uid://l5my1mtbbwwc" path="res://assets/TableAssets/AnimaliaOpened.png" id="30_0n3wm"]
@@ -42,11 +42,11 @@
 [ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
 [ext_resource type="FontFile" uid="uid://dd8uo7b162g5v" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.woff2" id="34_4w656"]
-[ext_resource type="Texture2D" uid="uid://c3cd5iblwgu56" path="res://assets/WarningBox.png" id="34_6iyjs"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
 [ext_resource type="Script" uid="uid://7a4hqadi5eir" path="res://blink.gd" id="35_4lmeg"]
 [ext_resource type="Texture2D" uid="uid://cxwwygprxsnwo" path="res://assets/BlinkAnimation/blink1.png" id="35_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://dpv465wwm4u5b" path="res://assets/BlinkAnimation/blink2.png" id="36_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://64hlh8d4tgcg" path="res://WarningBox.png" id="36_n5t1e"]
 [ext_resource type="Texture2D" uid="uid://diacwcrrx52tt" path="res://assets/BlinkAnimation/blink3.png" id="37_0cp0l"]
 [ext_resource type="Texture2D" uid="uid://cu1gwfpurx6jo" path="res://assets/BlinkAnimation/blink4.png" id="38_d2t1y"]
 [ext_resource type="AudioStream" uid="uid://cvrs2sdip3o3" path="res://assets/Sound/alice_soundz-scary-wolf-growling-224086.mp3" id="39_come4"]
@@ -794,7 +794,7 @@ offset_bottom = 199.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("34_6iyjs")
+texture = ExtResource("36_n5t1e")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true

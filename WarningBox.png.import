@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba686yp1eybs8"
-path="res://.godot/imported/Gemini_Generated_Image_2fsdkq2fsdkq2fsd.png-0d2c69cc4d9e51d7d2f11b046f909537.ctex"
+uid="uid://64hlh8d4tgcg"
+path="res://.godot/imported/WarningBox.png-ec06e5a7dceb9e2093865eec2c20f668.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment/Gemini_Generated_Image_2fsdkq2fsdkq2fsd.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_2fsdkq2fsdkq2fsd.png-0d2c69cc4d9e51d7d2f11b046f909537.ctex"]
+source_file="res://WarningBox.png"
+dest_files=["res://.godot/imported/WarningBox.png-ec06e5a7dceb9e2093865eec2c20f668.ctex"]
 
 [params]
 
