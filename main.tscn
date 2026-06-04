@@ -59,6 +59,7 @@
 [ext_resource type="Script" uid="uid://b1hb0gcuyi6c" path="res://epilogue_screen.gd" id="57_rnkwl"]
 [ext_resource type="Script" uid="uid://dh6sxbdngrqv0" path="res://final_decision.gd" id="58_vke2r"]
 [ext_resource type="Texture2D" uid="uid://cp14j5xtypywl" path="res://assets/laptop.png" id="59_rm4vd"]
+[ext_resource type="Texture2D" uid="uid://mpfteo1cja6u" path="res://assets/email popup.png" id="60_email"]
 [ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="61_rm4vd"]
 [ext_resource type="Texture2D" uid="uid://kml8bmh1sjsi" path="res://assets/gmail.png" id="62_pjyto"]
 
@@ -1217,6 +1218,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("60_email")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
