@@ -41,7 +41,6 @@
 [ext_resource type="Script" uid="uid://klkv3qfpd0ts" path="res://act_1_cutscene.gd" id="32_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://cahi5bs68qk4h" path="res://assets/TableAssets/NotepadOpened.png" id="32_qnost"]
 [ext_resource type="AudioStream" uid="uid://b8kuscl6lmj7e" path="res://assets/Sound/freesound_community-spotlight-91359.mp3" id="33_4k2k6"]
-[ext_resource type="Texture2D" uid="uid://cwulomc2c5ap8" path="res://assets/wolf_food_dev.jpg" id="33_jq2sk"]
 [ext_resource type="FontFile" uid="uid://dd8uo7b162g5v" path="res://assets/Fonts/bookxel-download/bookxel/bookxel.woff2" id="34_4w656"]
 [ext_resource type="Texture2D" uid="uid://c3cd5iblwgu56" path="res://assets/WarningBox.png" id="34_6iyjs"]
 [ext_resource type="AudioStream" uid="uid://blqf2ngiy6xp2" path="res://assets/Sound/freesound_community-flickeringlight-90411.mp3" id="35_0rl1p"]
@@ -76,11 +75,9 @@
 [ext_resource type="Script" uid="uid://dh6sxbdngrqv0" path="res://final_decision.gd" id="58_vke2r"]
 [ext_resource type="Texture2D" uid="uid://cd12u3edvkixj" path="res://assets/HungryWolfReact/FenceAction.png" id="59_53bls"]
 [ext_resource type="Texture2D" uid="uid://cp14j5xtypywl" path="res://assets/laptop.png" id="59_rm4vd"]
-[ext_resource type="Texture2D" uid="uid://d2leyntlbbtqg" path="res://assets/envelope_closed_open.png" id="59_uit24"]
 [ext_resource type="Texture2D" uid="uid://dhas0xx1mvwv6" path="res://assets/WoundedWolfReact/WaterAction.png" id="60_lwnsi"]
 [ext_resource type="Texture2D" uid="uid://ktk5vt106dar" path="res://assets/WoundedWolfReact/TranqAction.png" id="61_41lik"]
 [ext_resource type="Texture2D" uid="uid://dfyh67hkeccdw" path="res://assets/WoundedWolfReact/FoodAction.png" id="62_jbvwl"]
-[ext_resource type="Texture2D" uid="uid://kml8bmh1sjsi" path="res://assets/gmail.png" id="62_pjyto"]
 [ext_resource type="Texture2D" uid="uid://cv7gkkwi8i4xy" path="res://assets/WoundedWolfReact/MugAction.png" id="63_sn1fb"]
 [ext_resource type="Texture2D" uid="uid://5g0am87g8g5f" path="res://assets/WoundedWolfReact/PhoneAction.png" id="64_yvsr8"]
 [ext_resource type="Texture2D" uid="uid://dnrhidh84kqim" path="res://assets/WoundedWolfReact/RifleAction.png" id="65_vieuh"]
@@ -88,6 +85,11 @@
 [ext_resource type="Texture2D" uid="uid://basjdcho1cdjc" path="res://assets/WoundedWolfReact/RopeAction.png" id="67_l0gw7"]
 [ext_resource type="Texture2D" uid="uid://c3jx0vjmq8oqr" path="res://assets/WoundedWolfReact/AidAction.png" id="68_inymm"]
 [ext_resource type="Texture2D" uid="uid://bo7y2ja1escni" path="res://assets/WoundedWolfReact/FenceAction.png" id="69_jcxqu"]
+[ext_resource type="Texture2D" uid="uid://drtmq565wtvxw" path="res://assets/Environment/window_background.png" id="86_yysqy"]
+[ext_resource type="Texture2D" uid="uid://cpdqvfiqh4vvx" path="res://assets/Computer/pc_frame.png" id="87_yysqy"]
+[ext_resource type="Texture2D" uid="uid://bormldvqk2ghw" path="res://assets/Computer/inbox_screen1.png" id="88_swlj1"]
+[ext_resource type="Texture2D" uid="uid://di4hel8lxasc2" path="res://assets/Computer/email_screen.png" id="90_h6isl"]
+[ext_resource type="Texture2D" uid="uid://dc6ihow2an1he" path="res://assets/Computer/send_button.png" id="90_yysqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypp3"]
 bg_color = Color(0.1882353, 0.15294118, 0.11764706, 1)
@@ -1710,6 +1712,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="FinalDecision" type="Control" parent="." unique_id=822301147]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1717,31 +1720,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("58_vke2r")
+metadata/_edit_lock_ = true
 
 [node name="Laptop" type="TextureButton" parent="FinalDecision" unique_id=269563916]
 layout_mode = 0
-offset_left = 765.0
-offset_top = 411.0
-offset_right = 947.0
-offset_bottom = 588.0
+offset_left = 506.0
+offset_top = 365.0
+offset_right = 907.0
+offset_bottom = 555.0
 pivot_offset = Vector2(91, 85)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("59_rm4vd")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
 [node name="LaptopScreen" type="TextureRect" parent="FinalDecision/Laptop" unique_id=257769595]
 z_index = -1
 layout_mode = 0
-offset_left = 35.0
-offset_top = 10.0
-offset_right = 145.0
-offset_bottom = 73.0
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 231.0
+offset_bottom = 117.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("33_jq2sk")
+texture = ExtResource("86_yysqy")
 expand_mode = 1
 
 [node name="EmailPopup" type="Control" parent="FinalDecision" unique_id=1389825809]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15
@@ -1749,8 +1755,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=1155065536]
+[node name="Frame" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=1155065536]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1758,338 +1765,382 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("62_pjyto")
+texture = ExtResource("87_yysqy")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="Draft1" type="Control" parent="FinalDecision/EmailPopup" unique_id=1971978744]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="Draft1Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1" unique_id=1529767913]
+[node name="ExitButton" type="TextureButton" parent="FinalDecision/EmailPopup" unique_id=524642202]
 layout_mode = 0
-offset_left = 308.0
-offset_top = 99.0
-offset_right = 526.0
-offset_bottom = 190.0
+offset_left = 961.0
+offset_top = 35.0
+offset_right = 1033.0
+offset_bottom = 101.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("59_uit24")
-ignore_texture_size = true
-stretch_mode = 4
-metadata/_edit_lock_ = true
 
-[node name="Draft1Open" type="TextureRect" parent="FinalDecision/EmailPopup/Draft1" unique_id=1892890247]
-visible = false
-z_index = 3
+[node name="Inbox" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=355275224]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = 101.0
+offset_right = -106.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("62_pjyto")
+texture = ExtResource("88_swlj1")
 expand_mode = 1
-metadata/_edit_lock_ = true
+stretch_mode = 5
 
-[node name="Draft1CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=2110583530]
+[node name="Draft1Button" type="TextureButton" parent="FinalDecision/EmailPopup" unique_id=1529767913]
 layout_mode = 0
-offset_left = 1100.0
-offset_top = 6.0
-offset_right = 1140.0
-offset_bottom = 46.0
+offset_left = 187.0
+offset_top = 148.0
+offset_right = 553.0
+offset_bottom = 178.0
 mouse_default_cursor_shape = 2
-
-[node name="Draft1Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=340474283]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = 70.0
-offset_right = -15.0
-offset_bottom = -63.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
-bbcode_enabled = true
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="Draft1Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=1492868546]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 130.0
-offset_top = 92.0
-offset_right = -490.0
-offset_bottom = -529.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
-bbcode_enabled = true
-text = "kill the wolves"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Draft1Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=1862553836]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 72.0
-offset_top = 46.0
-offset_right = -540.0
-offset_bottom = -569.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
-bbcode_enabled = true
-text = "my boss"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Send1Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1/Draft1Open" unique_id=1959366321]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 597.0
-offset_right = 219.0
-offset_bottom = 637.0
-mouse_default_cursor_shape = 2
-
-[node name="Draft2" type="Control" parent="FinalDecision/EmailPopup" unique_id=145724733]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="Draft2Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2" unique_id=2096024351]
-layout_mode = 0
-offset_left = 307.0
-offset_top = 187.0
-offset_right = 525.0
-offset_bottom = 278.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("59_uit24")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
-[node name="Draft2Open" type="TextureRect" parent="FinalDecision/EmailPopup/Draft2" unique_id=1309029128]
+[node name="Draft1Open" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=1892890247]
 visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 37.0
+offset_right = -163.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("90_h6isl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Draft1CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1Open" unique_id=2110583530]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 476.0
+offset_right = 73.0
+offset_bottom = 526.0
+mouse_default_cursor_shape = 2
+metadata/_edit_lock_ = true
+
+[node name="Draft1Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1Open" unique_id=1492868546]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = 130.0
+offset_right = -326.0
+offset_bottom = -378.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Phase 3 Expansion is a go"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Send1Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft1Open" unique_id=1959366321]
 z_index = 3
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("33_jq2sk")
-
-[node name="Draft2CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=1960658079]
 layout_mode = 0
-offset_left = 1100.0
-offset_top = 6.0
-offset_right = 1140.0
-offset_bottom = 46.0
+offset_left = 646.0
+offset_top = 483.0
+offset_right = 772.0
+offset_bottom = 545.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("90_yysqy")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Draft2Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=1327510301]
+[node name="Draft1Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1Open" unique_id=533934008]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = 70.0
-offset_right = -15.0
-offset_bottom = -63.0
+offset_left = 131.0
+offset_top = 89.0
+offset_right = -326.0
+offset_bottom = -419.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-horizontal_alignment = 1
+text = "bob@hartwell.com"
+vertical_alignment = 1
+
+[node name="Draft1Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft1Open" unique_id=164725261]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 179.0
+offset_right = -27.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Bob, 
+
+Phase 3 expansion is ready to go. As a result of the feasibility study, forest demolition is scheduled to begin on Monday. PFA the projections and expected costs of the project. 
+
+Do note that the cost is slightly higher than previous estimates, primarily due to the wolf population within the forest, which will slow initial progress. However, we expect that beyond 10% clearance of Sector 3, the wolves will be forced to relocate, and long-term cost will be minimal beyond that point.
+
+Excited to start the new expansion. 
+Regards, 
+Marcus"
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Draft2Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=800599091]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 130.0
-offset_top = 92.0
-offset_right = -490.0
-offset_bottom = -529.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
-bbcode_enabled = true
-text = "kill the wolves"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Draft2Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=1169951782]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 72.0
-offset_top = 46.0
-offset_right = -540.0
-offset_bottom = -569.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
-bbcode_enabled = true
-text = "my boss"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Send2Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2/Draft2Open" unique_id=525731229]
+[node name="Draft2Button" type="TextureButton" parent="FinalDecision/EmailPopup" unique_id=2096024351]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 597.0
-offset_right = 219.0
-offset_bottom = 637.0
+offset_left = 193.0
+offset_top = 180.0
+offset_right = 602.0
+offset_bottom = 210.0
 mouse_default_cursor_shape = 2
-
-[node name="Draft3" type="Control" parent="FinalDecision/EmailPopup" unique_id=1389381312]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="Draft3Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3" unique_id=990400641]
-layout_mode = 0
-offset_left = 309.0
-offset_top = 295.0
-offset_right = 527.0
-offset_bottom = 386.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("59_uit24")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_lock_ = true
 
-[node name="Draft3Open" type="TextureRect" parent="FinalDecision/EmailPopup/Draft3" unique_id=1127821649]
+[node name="Draft2Open" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=1309029128]
 visible = false
-z_index = 3
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 37.0
+offset_right = -163.0
+offset_bottom = -77.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("90_h6isl")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Draft3CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=353183626]
+[node name="Draft2CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2Open" unique_id=1960658079]
 layout_mode = 0
-offset_left = 1100.0
-offset_top = 6.0
-offset_right = 1140.0
-offset_bottom = 46.0
+offset_left = 18.0
+offset_top = 478.0
+offset_right = 70.0
+offset_bottom = 528.0
 mouse_default_cursor_shape = 2
 
-[node name="Draft3Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=2094438029]
+[node name="Draft2Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2Open" unique_id=500719039]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = 70.0
-offset_right = -15.0
-offset_bottom = -63.0
+offset_left = 131.0
+offset_top = 130.0
+offset_right = -326.0
+offset_bottom = -378.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-horizontal_alignment = 1
+text = "Phase 3 Environmental concerns"
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Draft3Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=310883975]
+[node name="Draft2Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2Open" unique_id=529516382]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 130.0
-offset_top = 92.0
-offset_right = -490.0
-offset_bottom = -529.0
+offset_left = 131.0
+offset_top = 89.0
+offset_right = -326.0
+offset_bottom = -419.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "kill the wolves"
-horizontal_alignment = 1
+text = "bob@hartwell.com"
 vertical_alignment = 1
 
-[node name="Draft3Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=2083547546]
+[node name="Draft2Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft2Open" unique_id=1318447817]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 72.0
-offset_top = 46.0
-offset_right = -540.0
-offset_bottom = -569.0
+offset_left = 19.0
+offset_top = 179.0
+offset_right = -27.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("29_uypp3")
-theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "my boss"
-horizontal_alignment = 1
+text = "Bob, 
+
+Basis our feasibility study, I have attached a revised proposal for the phase 3 expansion. We expect this project to significantly displace a large wolf population, and as such our expected cost numbers are significantly higher than previous forecasts. We will require the additional funding to relocate the wolf population, and will aim to preserve foliage around the northern wildlife corridor extending 50m, in order to minimise disruption of local ecosystems. 
+
+If this is unsuitable for you, please consider finding an alternative project manager for this task. I cannot, in good conscience, continue this expansion without assurance that efforts will be made to minimise the impact to the local animal population. 
+
+Thank you, and Regards, 
+Marcus"
 vertical_alignment = 1
 
-[node name="Send3Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3/Draft3Open" unique_id=1398842480]
+[node name="Send2Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft2Open" unique_id=1839017324]
+z_index = 3
 layout_mode = 0
-offset_left = 37.0
-offset_top = 597.0
-offset_right = 219.0
-offset_bottom = 637.0
+offset_left = 646.0
+offset_top = 483.0
+offset_right = 772.0
+offset_bottom = 545.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("90_yysqy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Draft3Button" type="TextureButton" parent="FinalDecision/EmailPopup" unique_id=990400641]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 211.0
+offset_right = 561.0
+offset_bottom = 243.0
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="Draft3Open" type="TextureRect" parent="FinalDecision/EmailPopup" unique_id=1127821649]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 37.0
+offset_right = -163.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("90_h6isl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Draft3CloseButton" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3Open" unique_id=353183626]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 478.0
+offset_right = 72.0
+offset_bottom = 532.0
+mouse_default_cursor_shape = 2
+
+[node name="Draft3Subject" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3Open" unique_id=1639571538]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = 130.0
+offset_right = -326.0
+offset_bottom = -378.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Letter of Resignation"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Draft3Recipient" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3Open" unique_id=2073485172]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = 89.0
+offset_right = -326.0
+offset_bottom = -419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "hr@hartwell.com"
+vertical_alignment = 1
+
+[node name="Draft3Body" type="RichTextLabel" parent="FinalDecision/EmailPopup/Draft3Open" unique_id=429260599]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 179.0
+offset_right = -27.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("29_uypp3")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "To Hartwell Timber Company,
+
+Effective immediately, I am resigning from my position as Operations Manager.
+
+Recent events have made it clear that the decisions being made here are not the decisions I wish to spend my career defending. 
+I believe meaningful conservation cannot rely on individual acts of compromise alone. It requires systems, policies, and institutions designed to prevent these conflicts before they occur.
+
+I am accepting a position with the Cascade Wildlife Policy Institute.
+
+Thank you for the opportunities provided during my employment.
+
+Sincerely,
+Marcus"
+vertical_alignment = 1
+
+[node name="Send3Button" type="TextureButton" parent="FinalDecision/EmailPopup/Draft3Open" unique_id=212424213]
+z_index = 3
+layout_mode = 0
+offset_left = 646.0
+offset_top = 483.0
+offset_right = 772.0
+offset_bottom = 545.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("90_yysqy")
+ignore_texture_size = true
+stretch_mode = 5

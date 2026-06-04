@@ -84,7 +84,7 @@ func do_act_transition(item_name: String) -> void:
 
 	if act == 3:
 		blink_holder.play_open()
-		await final_decision.play_ending_sequence(score)
+		final_decision.play_ending_sequence(score)
 	else:
 		await advance_level()
 
